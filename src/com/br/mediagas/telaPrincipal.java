@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.br.mediagas;
 
 import com.br.mediagas.dao.GasDAO;
@@ -308,7 +304,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         txtValor = new javax.swing.JTextField();
         txtKM = new javax.swing.JTextField();
         btnInserir = new javax.swing.JToggleButton();
-        jButton1 = new javax.swing.JButton();
+        btnLimpar = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -329,6 +325,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         txtCodGas = new javax.swing.JLabel();
         txtCodGas1 = new javax.swing.JLabel();
         jAlerta = new javax.swing.JLabel();
+        btnAlterar = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jHome = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
@@ -479,7 +476,7 @@ public class telaPrincipal extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jInternalFrameGrafico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 910, Short.MAX_VALUE)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 912, Short.MAX_VALUE)
                     .addComponent(jScrollPane5))
                 .addContainerGap())
         );
@@ -523,7 +520,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         jLabel7.setText("KM Total");
 
         txtLitro.setBackground(new java.awt.Color(245, 233, 233));
-        txtLitro.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        txtLitro.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         txtLitro.setToolTipText("Digite Quantidade Litros");
         txtLitro.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -537,7 +534,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         txtData.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
 
         txtValor.setBackground(new java.awt.Color(245, 233, 233));
-        txtValor.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        txtValor.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         txtValor.setToolTipText("Digite Valor");
         txtValor.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -551,7 +548,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         });
 
         txtKM.setBackground(new java.awt.Color(245, 233, 233));
-        txtKM.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        txtKM.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         txtKM.setToolTipText("Digite KM Total");
         txtKM.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -566,10 +563,10 @@ public class telaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Limpar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnLimpar.setText("Limpar");
+        btnLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnLimparActionPerformed(evt);
             }
         });
 
@@ -583,7 +580,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         txtKMInicial.setBackground(new java.awt.Color(245, 233, 233));
-        txtKMInicial.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        txtKMInicial.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         txtKMInicial.setToolTipText("Digite KM Inicial");
         txtKMInicial.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -592,7 +589,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         });
 
         txtKMFinal.setBackground(new java.awt.Color(245, 233, 233));
-        txtKMFinal.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        txtKMFinal.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         txtKMFinal.setToolTipText("Digite KM Final");
 
         jLabel14.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -652,14 +649,20 @@ public class telaPrincipal extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(jPosto);
         if (jPosto.getColumnModel().getColumnCount() > 0) {
-            jPosto.getColumnModel().getColumn(0).setMinWidth(40);
-            jPosto.getColumnModel().getColumn(0).setMaxWidth(40);
-            jPosto.getColumnModel().getColumn(1).setMinWidth(100);
-            jPosto.getColumnModel().getColumn(1).setMaxWidth(100);
+            jPosto.getColumnModel().getColumn(0).setMinWidth(30);
+            jPosto.getColumnModel().getColumn(0).setMaxWidth(30);
+            jPosto.getColumnModel().getColumn(1).setMinWidth(120);
+            jPosto.getColumnModel().getColumn(1).setMaxWidth(120);
+            jPosto.getColumnModel().getColumn(2).setMinWidth(100);
+            jPosto.getColumnModel().getColumn(2).setMaxWidth(100);
+            jPosto.getColumnModel().getColumn(3).setMinWidth(65);
+            jPosto.getColumnModel().getColumn(3).setMaxWidth(65);
             jPosto.getColumnModel().getColumn(4).setMinWidth(55);
             jPosto.getColumnModel().getColumn(4).setMaxWidth(55);
             jPosto.getColumnModel().getColumn(5).setMinWidth(60);
             jPosto.getColumnModel().getColumn(5).setMaxWidth(60);
+            jPosto.getColumnModel().getColumn(6).setMinWidth(100);
+            jPosto.getColumnModel().getColumn(6).setMaxWidth(100);
             jPosto.getColumnModel().getColumn(9).setMinWidth(60);
             jPosto.getColumnModel().getColumn(9).setMaxWidth(60);
             jPosto.getColumnModel().getColumn(10).setMinWidth(60);
@@ -721,14 +724,21 @@ public class telaPrincipal extends javax.swing.JFrame {
             jGas.getColumnModel().getColumn(2).setMaxWidth(50);
             jGas.getColumnModel().getColumn(3).setMinWidth(60);
             jGas.getColumnModel().getColumn(3).setMaxWidth(60);
-            jGas.getColumnModel().getColumn(7).setMinWidth(40);
-            jGas.getColumnModel().getColumn(7).setMaxWidth(40);
+            jGas.getColumnModel().getColumn(7).setMinWidth(0);
+            jGas.getColumnModel().getColumn(7).setMaxWidth(0);
         }
 
         txtCodGas.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
 
         txtCodGas1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         txtCodGas1.setText("Cod GAS");
+
+        btnAlterar.setText("Alterar");
+        btnAlterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAlterarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -739,56 +749,63 @@ public class telaPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtKM, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(60, 60, 60)
-                        .addComponent(txtCodGas1)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtCodGas, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel2)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(txtKMInicial, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel12)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtKMFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtKM, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(60, 60, 60)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 498, Short.MAX_VALUE))))
+                                .addComponent(txtCodGas1)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtCodGas, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel2)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtLitro, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(btnInserir)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnLimpar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnAlterar)
+                                .addGap(317, 317, 317)
+                                .addComponent(jAlerta)))
+                        .addGap(402, 402, 402))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtLitro, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(btnInserir)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1)
-                        .addGap(386, 386, 386)
-                        .addComponent(jAlerta))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel17)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtPosto, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtPostoNome)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(bntCadastroPosto, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel11)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addComponent(txtKMInicial, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel12)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(txtKMFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(60, 60, 60)
+                                        .addComponent(jScrollPane1))))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel17)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtPosto, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtPostoNome)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(bntCadastroPosto, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap())))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -798,7 +815,7 @@ public class telaPrincipal extends javax.swing.JFrame {
                     .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 930, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 932, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -848,9 +865,10 @@ public class telaPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnInserir)
-                    .addComponent(jButton1)
-                    .addComponent(jAlerta))
-                .addContainerGap(70, Short.MAX_VALUE))
+                    .addComponent(btnLimpar)
+                    .addComponent(jAlerta)
+                    .addComponent(btnAlterar))
+                .addContainerGap(78, Short.MAX_VALUE))
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel3Layout.createSequentialGroup()
                     .addGap(293, 293, 293)
@@ -874,7 +892,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(775, Short.MAX_VALUE)
+                .addContainerGap(777, Short.MAX_VALUE)
                 .addComponent(jHome)
                 .addGap(96, 96, 96))
         );
@@ -899,7 +917,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 930, Short.MAX_VALUE)
+            .addGap(0, 932, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -986,7 +1004,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1098, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1100, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1037,9 +1055,9 @@ public class telaPrincipal extends javax.swing.JFrame {
         txtMedia.setEnabled(false);
     }//GEN-LAST:event_txtKMInicialKeyPressed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
         limparCampos();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnLimparActionPerformed
 
     private void btnInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserirActionPerformed
         // instanciando a classe Gas do pacote modelo e criando seu objeto gas
@@ -1235,6 +1253,10 @@ public class telaPrincipal extends javax.swing.JFrame {
         // chamar tela de grafico
         grafico();
     }//GEN-LAST:event_jPanel2MouseEntered
+
+    private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAlterarActionPerformed
  
      
     //Gerando o grafico
@@ -1384,11 +1406,12 @@ public class telaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bntCadastroPosto;
+    private javax.swing.JButton btnAlterar;
     private javax.swing.JToggleButton btnInserir;
+    private javax.swing.JButton btnLimpar;
     private javax.swing.JLabel jAlerta;
     private javax.swing.JLabel jAlerta2;
     private javax.swing.JLabel jAlerta3;
-    private javax.swing.JButton jButton1;
     private javax.swing.JTable jGas;
     private javax.swing.JTable jGas1;
     private javax.swing.JButton jHome;
