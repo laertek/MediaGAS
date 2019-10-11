@@ -84,7 +84,7 @@ public class telaPrincipal extends javax.swing.JFrame {
             
                 ResultSet rs = stmt.executeQuery();
                 DefaultTableModel model = (DefaultTableModel) jGas.getModel();
-                model.setNumRows(0); //inicializar do primeiro elemento da tabela
+                model.setNumRows(0); // inicializar do primeiro elemento da tabela
                 
                 while(rs.next())
                  {
