@@ -2,8 +2,10 @@
 package com.br.mediagas;
 
 import com.br.mediagas.dao.GasDAO;
+import com.br.mediagas.dao.PostoDAO;
 import com.br.mediagas.factory.ConnectionFactory;
 import com.br.mediagas.model.Gas;
+import com.br.mediagas.model.Posto;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -326,6 +328,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         txtCodGas1 = new javax.swing.JLabel();
         jAlerta = new javax.swing.JLabel();
         btnAlterar = new javax.swing.JButton();
+        btnDeletar = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jHome = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
@@ -740,6 +743,13 @@ public class telaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        btnDeletar.setText("Deletar");
+        btnDeletar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeletarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -774,10 +784,12 @@ public class telaPrincipal extends javax.swing.JFrame {
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(btnInserir)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnLimpar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnAlterar)
-                                .addGap(317, 317, 317)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnDeletar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnLimpar)
+                                .addGap(244, 244, 244)
                                 .addComponent(jAlerta)))
                         .addGap(402, 402, 402))
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -865,9 +877,10 @@ public class telaPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnInserir)
-                    .addComponent(btnLimpar)
                     .addComponent(jAlerta)
-                    .addComponent(btnAlterar))
+                    .addComponent(btnAlterar)
+                    .addComponent(btnDeletar)
+                    .addComponent(btnLimpar))
                 .addContainerGap(78, Short.MAX_VALUE))
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel3Layout.createSequentialGroup()
@@ -1239,6 +1252,12 @@ public class telaPrincipal extends javax.swing.JFrame {
 //        linha2 = (Integer.parseInt(jGas.getValueAt(linha,7).toString()));
         System.out.println("Valor da linha 2:"+linha2);
 //        txtPostoNome.setText(jPosto.getValueAt(linha2,1).toString());
+
+       // *** Campos
+       btnInserir.setVisible(false);
+       btnAlterar.setVisible(true);
+       btnDeletar.setVisible(true);
+       
     }//GEN-LAST:event_jGasMouseClicked
 
     private void jGas1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jGas1MouseClicked
@@ -1255,8 +1274,70 @@ public class telaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel2MouseEntered
 
     private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
-        // TODO add your handling code here:
+        //alterar dados 
+         //alterando banco tabela gas
+        // instanciando a classe Posto do pacote modelo e criando seu objeto posto
+        Gas gas1 = new Gas();
+        gas1.setIdgas(Integer.parseInt(txtCodGas.getText()));
+       
+        gas1.setLitro(Float.parseFloat(txtLitro.getText()));
+        gas1.setKm(Float.parseFloat(txtKM.getText()));
+        ///tratamento data
+               SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                try
+                {
+                    java.util.Date date = sdf.parse(txtData.getText());
+                    java.sql.Date dataSql = new java.sql.Date(date.getTime());
+                    //System.out.println("Data:::: " + dataSql );
+                    gas1.setData(dataSql);
+                }
+                catch (ParseException ex)
+                {
+                    Logger.getLogger(gas1.toString()).log(Level.SEVERE, null, ex);
+
+                }
+
+        gas1.setValor(Float.parseFloat(txtValor.getText()));
+        gas1.setMedia(Float.parseFloat(txtMedia.getText()));
+        //Calcular Custo do Litro de Combustivel
+        float t = 0;//adicionado 
+        if ((!txtValor.getText().trim().equals("")) && (!txtLitro.getText().trim().equals("")))
+        {
+            float r= Float.parseFloat(txtValor.getText());
+            float s = Float.parseFloat(txtLitro.getText());
+            
+            t = r / s;
+        
+            gas1.setCusto(t);
+        }
+         else
+        {
+            JOptionPane.showMessageDialog(null, "Verifique os campos!!!");
+        }
+        gas1.setIdposto(Integer.parseInt(txtPosto.getText()));
+        
+            // instanciando a classe GasDAO do pacote dao e criando seu objeto dao
+            GasDAO dao = new GasDAO();
+            dao.alterar(gas1);
+            JOptionPane.showMessageDialog(null, "Dados alterado para cod "+ txtCodGas.getText()+" com sucesso! ");
+            limparCampos();
+        
+        
+        
     }//GEN-LAST:event_btnAlterarActionPerformed
+
+    private void btnDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarActionPerformed
+        // deletando na tabela GAS
+        Gas gas2 = new Gas();
+        gas2.setIdgas(Integer.parseInt(txtCodGas.getText()));
+        
+        System.out.println("ID posto " + txtCodGas.getText());
+        GasDAO dao = new GasDAO();
+        dao.deletar(gas2);
+        
+         JOptionPane.showMessageDialog(null, "DELETADO!");
+        limparCampos();
+    }//GEN-LAST:event_btnDeletarActionPerformed
  
      
     //Gerando o grafico
@@ -1365,6 +1446,8 @@ public class telaPrincipal extends javax.swing.JFrame {
         txtCodGas1.setVisible(false);
         jAlerta3.setVisible(false);
         jAlerta2.setVisible(false);
+        btnAlterar.setVisible(false);
+        btnDeletar.setVisible(false);
     }
     /**
      * @param args the command line arguments
@@ -1407,6 +1490,7 @@ public class telaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bntCadastroPosto;
     private javax.swing.JButton btnAlterar;
+    private javax.swing.JButton btnDeletar;
     private javax.swing.JToggleButton btnInserir;
     private javax.swing.JButton btnLimpar;
     private javax.swing.JLabel jAlerta;

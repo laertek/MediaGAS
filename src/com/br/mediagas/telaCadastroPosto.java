@@ -458,7 +458,7 @@ public class telaCadastroPosto extends javax.swing.JFrame {
                                     .addComponent(bntLimpar)
                                     .addGap(18, 18, 18)
                                     .addComponent(btnUpdate)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGap(18, 18, 18)
                                     .addComponent(btnDeletar))))
                         .addContainerGap(19, Short.MAX_VALUE))))
         );
