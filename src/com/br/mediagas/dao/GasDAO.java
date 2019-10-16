@@ -52,6 +52,53 @@ public class GasDAO {
         
     } 
     
-          
+ // metodo para alterar dados GAS
+    public void alterar(Gas gas)
+    {
+    String sql = "UPDATE tb_gas SET litro = ?, km = ?, data = ?, valor = ?, media = ?,"
+            + "custo = ?, idposto = ? WHERE idgas = ?";
+            try{
+                PreparedStatement stmt = connection.prepareStatement(sql);
+                stmt.setFloat(1, gas.getLitro());
+                stmt.setFloat(2, gas.getKm());
+                stmt.setDate(3, gas.getData());
+                stmt.setFloat(4, gas.getValor());
+                stmt.setFloat(5, gas.getMedia());
+                stmt.setFloat(6, gas.getCusto());
+                stmt.setInt(7, gas.getIdposto());
+                stmt.setInt(8, gas.getIdgas());
+                stmt.execute();
+                stmt.close();
+            }
+            catch (SQLException u)
+            { 
+                    //throw new RuntimeException(u);
+                    JOptionPane.showMessageDialog(null, "Não foi possível alterar do banco: " + u);
+            }
+            
+            
+            
+    }
+     
+    
+    //metodo para deletar 
+    public void deletar(Gas gas)
+    {
+        String sql = "DELETE FROM tb_gas WHERE idgas = ?";
+            try
+            {
+                PreparedStatement stmt = connection.prepareStatement(sql);
+                stmt.setInt(1, gas.getIdgas());
+                stmt.execute();
+                stmt.close();    
+            }
+            catch(SQLException u) { 
+                throw new RuntimeException(u);
+            }
+        
+    }
     
 }
+    
+    
+
