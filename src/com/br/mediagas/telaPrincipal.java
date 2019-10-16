@@ -1364,30 +1364,59 @@ public class telaPrincipal extends javax.swing.JFrame {
         // ************cria o gráfico**********
        // Gerar Grafico 
          //gerar valor para grafico
-         
+        int j = jGas1.getRowCount();//retirar
+        System.out.println("Numero de linhas na tabela GAS1 " + j);//retirar
+        
+        
+        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+        for (int linha=0; linha<jGas1.getRowCount(); linha ++)
+        {
+            Float media =(Float)jGas1.getValueAt(linha, 5);
+            System.out.println("Valor pego para media "+media);
+            String data = (String) jGas1.getValueAt(linha, 4);
+            System.out.println("Valor pego para data "+data); 
+            
+            dataset.setValue(media, "Media", data);
+       
+        }
+              
+           JFreeChart chart = ChartFactory.createBarChart(" Media ", " Data ", "KM / Litro", dataset, PlotOrientation.VERTICAL, true, true, false);
+           //JFreeChart chart = ChartFactory.createLineChart(" Media ", " Data ", "KM / Litro", dataset, PlotOrientation.VERTICAL, true, true, false);
+           chart.setBackgroundPaint(Color.white);
+            chart.getTitle().setPaint(Color.black);
+            CategoryPlot p = chart.getCategoryPlot();
+            p.setRangeGridlinePaint(Color.BLACK);
+             ChartPanel chartPanel = new ChartPanel(chart);
+             jInternalFrameGrafico.setContentPane((new ChartPanel(chart)));
+             jInternalFrameGrafico.pack();
+            
+            jInternalFrameGrafico.setVisible(true);
+            jInternalFrameGrafico.remove(1);
+            jInternalFrameGrafico.repaint();
+        /* teste para percorrer com um for
         Float media = (Float) jGas1.getValueAt(0, 5);
         Float media2 = (Float) jGas1.getValueAt(1, 5);
         Float media3 = (Float) jGas1.getValueAt(2, 5);
         Float media4 = (Float) jGas1.getValueAt(3, 5);
         Float media5 = (Float) jGas1.getValueAt(4, 5);
         
-        System.out.println("Valor pego para media "+media);
-        System.out.println("Valor pego para media "+media2);
-        System.out.println("Valor pego para media "+media3);
-        System.out.println("Valor pego para media "+media4);
-        System.out.println("Valor pego para media "+media5);
+//        System.out.println("Valor pego para media "+media);
+//        System.out.println("Valor pego para media "+media2);
+//        System.out.println("Valor pego para media "+media3);
+//        System.out.println("Valor pego para media "+media4);
+//        System.out.println("Valor pego para media "+media5);
         
-        
-        String data = (String) jGas1.getValueAt(0, 4);
-        String data2 = (String) jGas1.getValueAt(1, 4);
-        String data3 = (String) jGas1.getValueAt(2, 4);
-        String data4 = (String) jGas1.getValueAt(3, 4);
-        String data5 = (String) jGas1.getValueAt(4, 4);
-          System.out.println("Valor pego para data "+data);              
-          System.out.println("Valor pego para data "+data2);     
-          System.out.println("Valor pego para data "+data3);     
-          System.out.println("Valor pego para data "+data4);     
-          System.out.println("Valor pego para data "+data5);    
+//        
+//        String data = (String) jGas1.getValueAt(0, 4);
+//        String data2 = (String) jGas1.getValueAt(1, 4);
+//        String data3 = (String) jGas1.getValueAt(2, 4);
+//        String data4 = (String) jGas1.getValueAt(3, 4);
+//        String data5 = (String) jGas1.getValueAt(4, 4);
+//          System.out.println("Valor pego para data "+data);              
+//          System.out.println("Valor pego para data "+data2);     
+//          System.out.println("Valor pego para data "+data3);     
+//          System.out.println("Valor pego para data "+data4);     
+//          System.out.println("Valor pego para data "+data5);    
           
           
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
@@ -1397,22 +1426,20 @@ public class telaPrincipal extends javax.swing.JFrame {
         dataset.setValue(media3, "Media", data3);
         dataset.setValue(media4, "Media", data4);
         dataset.setValue(media5, "Media", data5);
+       
+        */
        // JFreeChart chart = ChartFactory.createLineChart(" Media ", " Data ", "KM / Litro", dataset, PlotOrientation.VERTICAL, true, true, false);
-        JFreeChart chart = ChartFactory.createBarChart(" Media ", " Data ", "KM / Litro", dataset, PlotOrientation.VERTICAL, true, true, false);
-        chart.setBackgroundPaint(Color.white);
-        chart.getTitle().setPaint(Color.black);
-        CategoryPlot p = chart.getCategoryPlot();
-        p.setRangeGridlinePaint(Color.BLACK);
+       // JFreeChart chart = ChartFactory.createBarChart(" Media ", " Data ", "KM / Litro", dataset, PlotOrientation.VERTICAL, true, true, false);
+//        chart.setBackgroundPaint(Color.white);
+//        chart.getTitle().setPaint(Color.black);
+//        CategoryPlot p = chart.getCategoryPlot();
+//        p.setRangeGridlinePaint(Color.BLACK);
         
         //ChartFrame frame = new ChartFrame(" *** Teste *** ", chart);//funciona
-        ChartPanel chartPanel = new ChartPanel(chart);
+       // ChartPanel chartPanel = new ChartPanel(chart);
         
-            jInternalFrameGrafico.setContentPane((new ChartPanel(chart)));
-            jInternalFrameGrafico.pack();
+      //      jInternalFrameGrafico.setContentPane((new ChartPanel(chart)));
             
-            jInternalFrameGrafico.setVisible(true);
-            jInternalFrameGrafico.remove(1);
-            jInternalFrameGrafico.repaint();
         
         //Fim Grafico 
         
