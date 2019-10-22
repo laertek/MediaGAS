@@ -295,6 +295,8 @@ public class telaPrincipal extends javax.swing.JFrame {
         jScrollPane6 = new javax.swing.JScrollPane();
         jPosto1 = new javax.swing.JTable();
         jInternalFrameGrafico = new javax.swing.JInternalFrame();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jPosto2 = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -443,16 +445,25 @@ public class telaPrincipal extends javax.swing.JFrame {
         if (jPosto1.getColumnModel().getColumnCount() > 0) {
             jPosto1.getColumnModel().getColumn(0).setMinWidth(40);
             jPosto1.getColumnModel().getColumn(0).setMaxWidth(40);
-            jPosto1.getColumnModel().getColumn(1).setMinWidth(100);
-            jPosto1.getColumnModel().getColumn(1).setMaxWidth(100);
-            jPosto1.getColumnModel().getColumn(4).setMinWidth(55);
-            jPosto1.getColumnModel().getColumn(4).setMaxWidth(55);
-            jPosto1.getColumnModel().getColumn(5).setMinWidth(60);
-            jPosto1.getColumnModel().getColumn(5).setMaxWidth(60);
+            jPosto1.getColumnModel().getColumn(1).setMinWidth(60);
+            jPosto1.getColumnModel().getColumn(1).setMaxWidth(60);
+            jPosto1.getColumnModel().getColumn(2).setMinWidth(80);
+            jPosto1.getColumnModel().getColumn(2).setMaxWidth(80);
+            jPosto1.getColumnModel().getColumn(3).setMinWidth(80);
+            jPosto1.getColumnModel().getColumn(3).setMaxWidth(80);
+            jPosto1.getColumnModel().getColumn(4).setMinWidth(85);
+            jPosto1.getColumnModel().getColumn(4).setMaxWidth(85);
+            jPosto1.getColumnModel().getColumn(5).setMinWidth(200);
+            jPosto1.getColumnModel().getColumn(5).setMaxWidth(200);
+            jPosto1.getColumnModel().getColumn(6).setHeaderValue("Telefone");
+            jPosto1.getColumnModel().getColumn(7).setHeaderValue("Cidade");
+            jPosto1.getColumnModel().getColumn(8).setHeaderValue("Estado");
             jPosto1.getColumnModel().getColumn(9).setMinWidth(60);
             jPosto1.getColumnModel().getColumn(9).setMaxWidth(60);
+            jPosto1.getColumnModel().getColumn(9).setHeaderValue("Longitude");
             jPosto1.getColumnModel().getColumn(10).setMinWidth(60);
             jPosto1.getColumnModel().getColumn(10).setMaxWidth(60);
+            jPosto1.getColumnModel().getColumn(10).setHeaderValue("Latitude");
         }
 
         jInternalFrameGrafico.setPreferredSize(new java.awt.Dimension(750, 400));
@@ -469,30 +480,76 @@ public class telaPrincipal extends javax.swing.JFrame {
             .addGap(0, 370, Short.MAX_VALUE)
         );
 
+        jPosto2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Cod", "Litro", "KMs", "Data", "Media", "Posto"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jPosto2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPosto2MouseClicked(evt);
+            }
+        });
+        jScrollPane7.setViewportView(jPosto2);
+        if (jPosto2.getColumnModel().getColumnCount() > 0) {
+            jPosto2.getColumnModel().getColumn(0).setMinWidth(40);
+            jPosto2.getColumnModel().getColumn(0).setMaxWidth(40);
+            jPosto2.getColumnModel().getColumn(1).setMinWidth(60);
+            jPosto2.getColumnModel().getColumn(1).setMaxWidth(60);
+            jPosto2.getColumnModel().getColumn(2).setMinWidth(80);
+            jPosto2.getColumnModel().getColumn(2).setMaxWidth(80);
+            jPosto2.getColumnModel().getColumn(3).setMinWidth(80);
+            jPosto2.getColumnModel().getColumn(3).setMaxWidth(80);
+            jPosto2.getColumnModel().getColumn(4).setMinWidth(85);
+            jPosto2.getColumnModel().getColumn(4).setMaxWidth(85);
+            jPosto2.getColumnModel().getColumn(5).setMinWidth(200);
+            jPosto2.getColumnModel().getColumn(5).setMaxWidth(200);
+        }
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jInternalFrameGrafico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 912, Short.MAX_VALUE)
-                    .addComponent(jScrollPane5))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 8, Short.MAX_VALUE))
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.LEADING))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jInternalFrameGrafico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jInternalFrameGrafico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(209, 209, 209)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
-                .addGap(1, 1, 1)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jTAbas.addTab("Home", jPanel2);
@@ -1265,9 +1322,71 @@ public class telaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jGas1MouseClicked
 
     private void jPosto1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPosto1MouseClicked
-        // TODO add your handling code here:
+        // quando clicar na tabela do posto teremos a lista de posto abastecidas
+        
+        int linha1 = jPosto1.getSelectedRow(); //selecionar posto
+       int codp = Integer.parseInt((String) jPosto1.getValueAt(linha1,0));
+        System.out.println("Codigo do posto "+ codp);
+        //criar sql
+        String sql = "SELECT idgas, litro, km, data, media, idposto FROM tb_gas WHERE idposto='"+codp+"'";
+        
+        povoarJPosto2(sql);
+        
     }//GEN-LAST:event_jPosto1MouseClicked
 
+    public void povoarJPosto2(String sql)//preenchedo tabela Jposto2
+    {
+         Connection connection = new ConnectionFactory().getConnection();
+            System.out.println("Conexão aberta!");
+            try
+            {
+                PreparedStatement stmt = connection.prepareCall(sql);
+            
+                ResultSet rs = stmt.executeQuery();
+                DefaultTableModel model = (DefaultTableModel) jPosto2.getModel();
+                model.setNumRows(0); // inicializar do primeiro elemento da tabela
+                while(rs.next())
+                 {
+//                     //teste data
+                       Date minhaData = rs.getDate("data");
+                       SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+                       String data_formatada = formato.format(minhaData);
+                       
+                      model.addRow(new Object[]
+                    {
+                        rs.getInt("idgas"),
+                        rs.getString("litro"),
+                        rs.getString("km"),
+                       // rs.getString("valor"),
+                        data_formatada,
+                        //rs.getDate("data"),
+                        
+                        
+                        //rs.getData(new SimpleDateFormat("dd/MM/yyyy").format("data")),
+                        //txtData.setText(new SimpleDateFormat("dd/MM/yyyy").format(new Date(System.currentTimeMillis())));
+                        rs.getFloat("media"),
+                        rs.getInt("idposto"),
+                        
+                   
+                    });
+                }
+                
+                
+               //fechar banco 
+               connection.close(); 
+               System.out.println("Conexão Fechar2323");
+            }
+            catch(SQLException ex)
+            {
+                JOptionPane.showMessageDialog(null, "Não foi possível obter dados do banco. Erro:"+ex); 
+            }
+    }
+            
+            
+            
+            
+            
+            
     private void jPanel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseEntered
         // chamar tela de grafico
         grafico();
@@ -1338,6 +1457,10 @@ public class telaPrincipal extends javax.swing.JFrame {
          JOptionPane.showMessageDialog(null, "DELETADO!");
         limparCampos();
     }//GEN-LAST:event_btnDeletarActionPerformed
+
+    private void jPosto2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPosto2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPosto2MouseClicked
  
      
     //Gerando o grafico
@@ -1381,7 +1504,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         }
               
            JFreeChart chart = ChartFactory.createBarChart(" Media ", " Data ", "KM / Litro", dataset, PlotOrientation.VERTICAL, true, true, false);
-           //JFreeChart chart = ChartFactory.createLineChart(" Media ", " Data ", "KM / Litro", dataset, PlotOrientation.VERTICAL, true, true, false);
+          // JFreeChart chart = ChartFactory.createLineChart3D(" Media ", " Data ", "KM / Litro", dataset, PlotOrientation.VERTICAL, true, true, false);
            chart.setBackgroundPaint(Color.white);
             chart.getTitle().setPaint(Color.black);
             CategoryPlot p = chart.getCategoryPlot();
@@ -1551,10 +1674,12 @@ public class telaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JTable jPosto;
     private javax.swing.JTable jPosto1;
+    private javax.swing.JTable jPosto2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTabbedPane jTAbas;
     private javax.swing.JLabel txtCodGas;
     private javax.swing.JLabel txtCodGas1;
