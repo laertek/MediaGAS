@@ -302,6 +302,8 @@ public class telaPrincipal extends javax.swing.JFrame {
         jInternalFrameGrafico = new javax.swing.JInternalFrame();
         jScrollPane7 = new javax.swing.JScrollPane();
         jPosto2 = new javax.swing.JTable();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -405,17 +407,15 @@ public class telaPrincipal extends javax.swing.JFrame {
         if (jGas1.getColumnModel().getColumnCount() > 0) {
             jGas1.getColumnModel().getColumn(0).setMinWidth(40);
             jGas1.getColumnModel().getColumn(0).setMaxWidth(40);
-            jGas1.getColumnModel().getColumn(1).setMinWidth(50);
-            jGas1.getColumnModel().getColumn(1).setMaxWidth(50);
-            jGas1.getColumnModel().getColumn(2).setMinWidth(50);
-            jGas1.getColumnModel().getColumn(2).setMaxWidth(50);
-            jGas1.getColumnModel().getColumn(3).setMinWidth(60);
-            jGas1.getColumnModel().getColumn(3).setMaxWidth(60);
+            jGas1.getColumnModel().getColumn(1).setMinWidth(60);
+            jGas1.getColumnModel().getColumn(1).setMaxWidth(60);
+            jGas1.getColumnModel().getColumn(2).setMinWidth(80);
+            jGas1.getColumnModel().getColumn(2).setMaxWidth(80);
+            jGas1.getColumnModel().getColumn(3).setMinWidth(100);
+            jGas1.getColumnModel().getColumn(3).setMaxWidth(100);
             jGas1.getColumnModel().getColumn(4).setMinWidth(80);
-            jGas1.getColumnModel().getColumn(4).setPreferredWidth(80);
             jGas1.getColumnModel().getColumn(4).setMaxWidth(80);
             jGas1.getColumnModel().getColumn(5).setMinWidth(80);
-            jGas1.getColumnModel().getColumn(5).setPreferredWidth(80);
             jGas1.getColumnModel().getColumn(5).setMaxWidth(80);
             jGas1.getColumnModel().getColumn(6).setMinWidth(90);
             jGas1.getColumnModel().getColumn(6).setPreferredWidth(90);
@@ -450,8 +450,8 @@ public class telaPrincipal extends javax.swing.JFrame {
         if (jPosto1.getColumnModel().getColumnCount() > 0) {
             jPosto1.getColumnModel().getColumn(0).setMinWidth(35);
             jPosto1.getColumnModel().getColumn(0).setMaxWidth(35);
-            jPosto1.getColumnModel().getColumn(1).setMinWidth(150);
-            jPosto1.getColumnModel().getColumn(1).setMaxWidth(150);
+            jPosto1.getColumnModel().getColumn(1).setMinWidth(170);
+            jPosto1.getColumnModel().getColumn(1).setMaxWidth(170);
             jPosto1.getColumnModel().getColumn(2).setMinWidth(0);
             jPosto1.getColumnModel().getColumn(2).setMaxWidth(0);
             jPosto1.getColumnModel().getColumn(3).setMinWidth(0);
@@ -491,11 +491,11 @@ public class telaPrincipal extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Cod", "Litro", "KMs", "Data", "Media", "Posto"
+                "Cod", "Litros", "KMs", "Data", "Media", "Cod Posto", "Posto"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -517,11 +517,17 @@ public class telaPrincipal extends javax.swing.JFrame {
             jPosto2.getColumnModel().getColumn(2).setMaxWidth(80);
             jPosto2.getColumnModel().getColumn(3).setMinWidth(80);
             jPosto2.getColumnModel().getColumn(3).setMaxWidth(80);
-            jPosto2.getColumnModel().getColumn(4).setMinWidth(85);
-            jPosto2.getColumnModel().getColumn(4).setMaxWidth(85);
-            jPosto2.getColumnModel().getColumn(5).setMinWidth(200);
-            jPosto2.getColumnModel().getColumn(5).setMaxWidth(200);
+            jPosto2.getColumnModel().getColumn(4).setMinWidth(80);
+            jPosto2.getColumnModel().getColumn(4).setMaxWidth(80);
+            jPosto2.getColumnModel().getColumn(5).setMinWidth(70);
+            jPosto2.getColumnModel().getColumn(5).setMaxWidth(70);
         }
+
+        jLabel18.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel18.setText("Posto:");
+        jLabel18.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jLabel19.setText("Selecione o Posto para ver sua média:");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -534,23 +540,31 @@ public class telaPrincipal extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jInternalFrameGrafico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 8, Short.MAX_VALUE))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                            .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.LEADING))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jInternalFrameGrafico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(209, 209, 209)
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
+                        .addGap(21, 21, 21)
+                        .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                .addGap(9, 9, 9)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -887,7 +901,7 @@ public class telaPrincipal extends javax.swing.JFrame {
                     .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 932, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 963, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -965,7 +979,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(777, Short.MAX_VALUE)
+                .addContainerGap(808, Short.MAX_VALUE)
                 .addComponent(jHome)
                 .addGap(96, 96, 96))
         );
@@ -990,7 +1004,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 932, Short.MAX_VALUE)
+            .addGap(0, 963, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1077,7 +1091,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1100, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1131, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1331,8 +1345,8 @@ public class telaPrincipal extends javax.swing.JFrame {
        int codp = Integer.parseInt((String) jPosto1.getValueAt(linha1,0));
         System.out.println("Codigo do posto "+ codp);
         //criar sql
-        String sql = "SELECT idgas, litro, km, data, media, idposto FROM tb_gas WHERE idposto='"+codp+"'";
-        
+        //String sql = "SELECT idgas, litro, km, data, media, idposto FROM tb_gas WHERE idposto='"+codp+"'";
+        String sql = "SELECT tb_gas.idgas, tb_gas.litro, tb_gas.km, tb_gas.data, tb_gas.media, tb_gas.idposto, tb_posto.nome FROM tb_gas, tb_posto WHERE tb_gas.idposto = tb_posto.idposto AND tb_gas.idposto='"+codp+"'";
         povoarJPosto2(sql);
         
     }//GEN-LAST:event_jPosto1MouseClicked
@@ -1369,7 +1383,7 @@ public class telaPrincipal extends javax.swing.JFrame {
                         //txtData.setText(new SimpleDateFormat("dd/MM/yyyy").format(new Date(System.currentTimeMillis())));
                         rs.getFloat("media"),
                         rs.getInt("idposto"),
-                        
+                        rs.getString("nome"),
                    
                     });
                 }
@@ -1473,7 +1487,7 @@ public class telaPrincipal extends javax.swing.JFrame {
     {
         
         
-        //carregar os dados na jPosto quando abrir o formulario
+        //carregar os dados na jPosto1 quando abrir o formulario
         //criar sql
        // DefaultCategoryDataset posto = new DefaultCategoryDataset();
         String sql = "SELECT * FROM tb_posto ORDER BY idposto DESC";
@@ -1679,6 +1693,8 @@ public class telaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
