@@ -47,6 +47,7 @@ import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.chart.plot.CombinedDomainXYPlot;
 import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.category.DefaultCategoryDataset;
 
@@ -268,6 +269,10 @@ public class telaPrincipal extends javax.swing.JFrame {
                //fechar banco 
                connection.close(); 
                System.out.println("Conexão Fechar");
+              
+             
+//               int rowSel = jPosto1.getSelectedRow();
+//               System.out.println("Pego o valor da JPosto 1"+ rowSel);
             }
             catch(SQLException ex)
             {
@@ -443,27 +448,28 @@ public class telaPrincipal extends javax.swing.JFrame {
         });
         jScrollPane6.setViewportView(jPosto1);
         if (jPosto1.getColumnModel().getColumnCount() > 0) {
-            jPosto1.getColumnModel().getColumn(0).setMinWidth(40);
-            jPosto1.getColumnModel().getColumn(0).setMaxWidth(40);
-            jPosto1.getColumnModel().getColumn(1).setMinWidth(60);
-            jPosto1.getColumnModel().getColumn(1).setMaxWidth(60);
-            jPosto1.getColumnModel().getColumn(2).setMinWidth(80);
-            jPosto1.getColumnModel().getColumn(2).setMaxWidth(80);
-            jPosto1.getColumnModel().getColumn(3).setMinWidth(80);
-            jPosto1.getColumnModel().getColumn(3).setMaxWidth(80);
-            jPosto1.getColumnModel().getColumn(4).setMinWidth(85);
-            jPosto1.getColumnModel().getColumn(4).setMaxWidth(85);
-            jPosto1.getColumnModel().getColumn(5).setMinWidth(200);
-            jPosto1.getColumnModel().getColumn(5).setMaxWidth(200);
-            jPosto1.getColumnModel().getColumn(6).setHeaderValue("Telefone");
-            jPosto1.getColumnModel().getColumn(7).setHeaderValue("Cidade");
-            jPosto1.getColumnModel().getColumn(8).setHeaderValue("Estado");
-            jPosto1.getColumnModel().getColumn(9).setMinWidth(60);
-            jPosto1.getColumnModel().getColumn(9).setMaxWidth(60);
-            jPosto1.getColumnModel().getColumn(9).setHeaderValue("Longitude");
-            jPosto1.getColumnModel().getColumn(10).setMinWidth(60);
-            jPosto1.getColumnModel().getColumn(10).setMaxWidth(60);
-            jPosto1.getColumnModel().getColumn(10).setHeaderValue("Latitude");
+            jPosto1.getColumnModel().getColumn(0).setMinWidth(35);
+            jPosto1.getColumnModel().getColumn(0).setMaxWidth(35);
+            jPosto1.getColumnModel().getColumn(1).setMinWidth(150);
+            jPosto1.getColumnModel().getColumn(1).setMaxWidth(150);
+            jPosto1.getColumnModel().getColumn(2).setMinWidth(0);
+            jPosto1.getColumnModel().getColumn(2).setMaxWidth(0);
+            jPosto1.getColumnModel().getColumn(3).setMinWidth(0);
+            jPosto1.getColumnModel().getColumn(3).setMaxWidth(0);
+            jPosto1.getColumnModel().getColumn(4).setMinWidth(0);
+            jPosto1.getColumnModel().getColumn(4).setMaxWidth(0);
+            jPosto1.getColumnModel().getColumn(5).setMinWidth(0);
+            jPosto1.getColumnModel().getColumn(5).setMaxWidth(0);
+            jPosto1.getColumnModel().getColumn(6).setMinWidth(0);
+            jPosto1.getColumnModel().getColumn(6).setMaxWidth(0);
+            jPosto1.getColumnModel().getColumn(7).setMinWidth(0);
+            jPosto1.getColumnModel().getColumn(7).setMaxWidth(0);
+            jPosto1.getColumnModel().getColumn(8).setMinWidth(0);
+            jPosto1.getColumnModel().getColumn(8).setMaxWidth(0);
+            jPosto1.getColumnModel().getColumn(9).setMinWidth(0);
+            jPosto1.getColumnModel().getColumn(9).setMaxWidth(0);
+            jPosto1.getColumnModel().getColumn(10).setMinWidth(0);
+            jPosto1.getColumnModel().getColumn(10).setMaxWidth(0);
         }
 
         jInternalFrameGrafico.setPreferredSize(new java.awt.Dimension(750, 400));
@@ -482,10 +488,7 @@ public class telaPrincipal extends javax.swing.JFrame {
 
         jPosto2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
                 "Cod", "Litro", "KMs", "Data", "Media", "Posto"
@@ -1380,6 +1383,7 @@ public class telaPrincipal extends javax.swing.JFrame {
             {
                 JOptionPane.showMessageDialog(null, "Não foi possível obter dados do banco. Erro:"+ex); 
             }
+         
     }
             
             
@@ -1389,7 +1393,7 @@ public class telaPrincipal extends javax.swing.JFrame {
             
     private void jPanel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseEntered
         // chamar tela de grafico
-        grafico();
+       grafico();
     }//GEN-LAST:event_jPanel2MouseEntered
 
     private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
@@ -1498,18 +1502,34 @@ public class telaPrincipal extends javax.swing.JFrame {
             System.out.println("Valor pego para media "+media);
             String data = (String) jGas1.getValueAt(linha, 4);
             System.out.println("Valor pego para data "+data); 
-            
             dataset.setValue(media, "Media", data);
        
         }
-              
+           // segundo grafico
+          // DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+          
+           //System.out.println("Valor do !!!! = " + jPosto1.getValueAt(0, NORMAL));
+            if (jPosto2.getRowCount() != 0){  
+                for (int linha1=0; linha1<jPosto2.getRowCount(); linha1 ++)
+                    {
+                        Float media1 =(Float)jPosto2.getValueAt(linha1, 4);
+                        System.out.println("Valor pego para media jposto2 "+media1);
+                        String data1 = (String) jPosto2.getValueAt(linha1, 3);
+                        System.out.println("Valor pego para data jposto2 "+data1); 
+
+                        dataset.setValue(media1, "Posto Selecionado",data1);
+
+                    }
+            }
+           //JFreeChart chart = ChartFactory.createBarChart(" Media ", " Data ", "KM / Litro", dataset, PlotOrientation.VERTICAL, true, true, false);
+          
            JFreeChart chart = ChartFactory.createBarChart(" Media ", " Data ", "KM / Litro", dataset, PlotOrientation.VERTICAL, true, true, false);
-          // JFreeChart chart = ChartFactory.createLineChart3D(" Media ", " Data ", "KM / Litro", dataset, PlotOrientation.VERTICAL, true, true, false);
+           
            chart.setBackgroundPaint(Color.white);
-            chart.getTitle().setPaint(Color.black);
-            CategoryPlot p = chart.getCategoryPlot();
-            p.setRangeGridlinePaint(Color.BLACK);
-             ChartPanel chartPanel = new ChartPanel(chart);
+           chart.getTitle().setPaint(Color.black);
+           CategoryPlot p = chart.getCategoryPlot();
+           p.setRangeGridlinePaint(Color.BLACK);
+           ChartPanel chartPanel = new ChartPanel(chart);
              jInternalFrameGrafico.setContentPane((new ChartPanel(chart)));
              jInternalFrameGrafico.pack();
             
