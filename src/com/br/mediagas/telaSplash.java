@@ -64,6 +64,7 @@ public class telaSplash extends javax.swing.JFrame {
         //Thread.sleep( 1000 );
         telaPrincipal frame = new telaPrincipal();
         frame.setVisible(true);
+       
         this.dispose();
     }
 
