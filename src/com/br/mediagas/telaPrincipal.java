@@ -141,7 +141,7 @@ public class telaPrincipal extends javax.swing.JFrame {
                    txtBarril.setLocation(x, y);
                    txtDolar.setLocation(x, r);
                    try {
-                       sleep(30);
+                       sleep(40);
                    }catch (Exception e){
                    
                }
@@ -149,6 +149,7 @@ public class telaPrincipal extends javax.swing.JFrame {
            }
                      
        }.start();
+        
     }
    
     
@@ -434,6 +435,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         txtDolar = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         txtBarril = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1010, 619));
@@ -446,6 +448,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         });
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.setMaximumSize(new java.awt.Dimension(1010, 619));
         jPanel1.setPreferredSize(new java.awt.Dimension(1010, 619));
 
@@ -536,8 +539,8 @@ public class telaPrincipal extends javax.swing.JFrame {
         if (jPosto1.getColumnModel().getColumnCount() > 0) {
             jPosto1.getColumnModel().getColumn(0).setMinWidth(35);
             jPosto1.getColumnModel().getColumn(0).setMaxWidth(35);
-            jPosto1.getColumnModel().getColumn(1).setMinWidth(170);
-            jPosto1.getColumnModel().getColumn(1).setMaxWidth(170);
+            jPosto1.getColumnModel().getColumn(1).setMinWidth(180);
+            jPosto1.getColumnModel().getColumn(1).setMaxWidth(180);
             jPosto1.getColumnModel().getColumn(2).setMinWidth(0);
             jPosto1.getColumnModel().getColumn(2).setMaxWidth(0);
             jPosto1.getColumnModel().getColumn(3).setMinWidth(0);
@@ -621,7 +624,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jCorrer, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
+            .addComponent(jCorrer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -927,78 +930,87 @@ public class telaPrincipal extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtKM, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(60, 60, 60)
-                                .addComponent(txtCodGas1)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtCodGas, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel2)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtLitro, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(btnInserir)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnAlterar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnDeletar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnLimpar)
-                                .addGap(244, 244, 244)
-                                .addComponent(jAlerta)))
-                        .addGap(402, 402, 402))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addComponent(txtKMInicial, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel12)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(txtKMFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(60, 60, 60)
-                                .addComponent(jScrollPane1))
+                                        .addComponent(jLabel7)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(txtCodGas, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(146, 146, 146))
+                                    .addComponent(jLabel2)
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addGap(520, 520, 520)
+                                        .addComponent(jAlerta))
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addComponent(jLabel6)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtLitro, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel4)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel17)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtPosto, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtPostoNome, javax.swing.GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(bntCadastroPosto, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap())))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addComponent(jLabel11)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                                .addComponent(txtKMInicial, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(txtCodGas1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                                        .addComponent(jLabel12)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                        .addComponent(txtKMFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addComponent(txtKM, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(179, 179, 179)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 551, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel15)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtMedia, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel3Layout.createSequentialGroup()
+                                    .addComponent(jLabel15)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(txtMedia, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addComponent(btnInserir)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnAlterar)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnDeletar)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnLimpar))
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addComponent(jLabel17)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(txtPosto, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtPostoNome, javax.swing.GroupLayout.DEFAULT_SIZE, 391, Short.MAX_VALUE)))))
+                        .addGap(4, 4, 4)
+                        .addComponent(bntCadastroPosto, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+            .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 963, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 952, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1011,14 +1023,16 @@ public class telaPrincipal extends javax.swing.JFrame {
                             .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3))
                         .addGap(14, 14, 14)
-                        .addComponent(jLabel14)
-                        .addGap(6, 6, 6)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(txtKM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCodGas, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCodGas1))
-                        .addGap(15, 15, 15)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel14)
+                                .addGap(6, 6, 6)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel7)
+                                    .addComponent(txtKM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtCodGas1)))
+                            .addComponent(txtCodGas, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(19, 19, 19)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel11)
                             .addComponent(txtKMInicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1037,27 +1051,29 @@ public class telaPrincipal extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel16)
-                .addGap(190, 190, 190)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bntCadastroPosto)
-                    .addComponent(jLabel17)
-                    .addComponent(txtPosto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtPostoNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(219, 219, 219)
+                .addComponent(jAlerta)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel17)
+                        .addComponent(txtPosto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtPostoNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(bntCadastroPosto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnInserir)
-                    .addComponent(jAlerta)
                     .addComponent(btnAlterar)
                     .addComponent(btnDeletar)
                     .addComponent(btnLimpar))
-                .addContainerGap(134, Short.MAX_VALUE))
+                .addContainerGap())
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel3Layout.createSequentialGroup()
-                    .addGap(293, 293, 293)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(193, Short.MAX_VALUE)))
+                    .addGap(296, 296, 296)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(99, Short.MAX_VALUE)))
         );
 
         jTAbas.addTab("Cadastro", jPanel3);
@@ -1076,7 +1092,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(808, Short.MAX_VALUE)
+                .addContainerGap(797, Short.MAX_VALUE)
                 .addComponent(jHome)
                 .addGap(96, 96, 96))
         );
@@ -1101,7 +1117,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 963, Short.MAX_VALUE)
+            .addGap(0, 952, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1124,6 +1140,8 @@ public class telaPrincipal extends javax.swing.JFrame {
 
         jAlerta3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/br/mediagas/imagens/Alerta peq.gif"))); // NOI18N
         jAlerta3.setToolTipText("");
+        jAlerta3.setMaximumSize(new java.awt.Dimension(96, 90));
+        jAlerta3.setMinimumSize(new java.awt.Dimension(96, 90));
 
         jAlerta2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jAlerta2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1150,7 +1168,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(txtDolar, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
+            .addComponent(txtDolar, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1178,31 +1196,34 @@ public class telaPrincipal extends javax.swing.JFrame {
                 .addGap(0, 10, Short.MAX_VALUE))
         );
 
+        jLabel8.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
+        jLabel8.setText("Versão 1.0");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jTAbas)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(jAlerta2))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnCota, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jAlerta3, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap())))))
+                            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(btnCota, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(24, 24, 24)
+                            .addComponent(jAlerta3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(10, 10, 10)
+                            .addComponent(jAlerta2)))
+                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1219,10 +1240,13 @@ public class telaPrincipal extends javax.swing.JFrame {
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(45, 45, 45)
                 .addComponent(btnCota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jAlerta2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jAlerta3, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jAlerta3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel8)
+                .addContainerGap())
             .addComponent(jTAbas, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
 
@@ -1230,11 +1254,11 @@ public class telaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1137, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1140, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 675, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 679, Short.MAX_VALUE)
         );
 
         pack();
@@ -1270,148 +1294,6 @@ public class telaPrincipal extends javax.swing.JFrame {
         txtData.setText(new SimpleDateFormat("dd/MM/yyyy").format(new Date(System.currentTimeMillis())));
     }//GEN-LAST:event_jTAbasMouseEntered
 
-    private void jPanel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jPanel3MouseEntered
-
-    private void txtKMInicialKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtKMInicialKeyPressed
-        txtKMFinal.setVisible(true);
-        txtKMFinal.setEnabled(true);
-        txtKM.setEnabled(false);
-        txtMedia.setEnabled(false);
-    }//GEN-LAST:event_txtKMInicialKeyPressed
-
-    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
-        limparCampos();
-    }//GEN-LAST:event_btnLimparActionPerformed
-
-    private void btnInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserirActionPerformed
-        // instanciando a classe Gas do pacote modelo e criando seu objeto gas
-        Gas gas1 = new Gas();
-
-        gas1.setLitro(Float.parseFloat(txtLitro.getText()));
-        gas1.setKm(Float.parseFloat(txtKM.getText()));
-        gas1.setValor(Float.parseFloat(txtValor.getText()));
-        gas1.setMedia(Float.parseFloat(txtMedia.getText()));
-        
-        //Calcular Custo do Litro de Combustivel
-        float t = 0;//adicionado 
-        if ((!txtValor.getText().trim().equals("")) && (!txtLitro.getText().trim().equals("")))
-        {
-            float r= Float.parseFloat(txtValor.getText());
-            float s = Float.parseFloat(txtLitro.getText());
-            
-            t = r / s;
-        
-            gas1.setCusto(t);
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(null, "Verifique os campos!!!");
-        }
-        // retirar se nao der certo
-       
-        
-         gas1.setIdposto(Integer.parseInt(txtPosto.getText()));
-        //teste tratamento data
-
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        try
-        {
-            java.util.Date date = sdf.parse(txtData.getText());
-            java.sql.Date dataSql = new java.sql.Date(date.getTime());
-            //System.out.println("Data:::: " + dataSql );
-            gas1.setData(dataSql);
-        }
-        catch (ParseException ex)
-        {
-            Logger.getLogger(gas1.toString()).log(Level.SEVERE, null, ex);
-
-        }
-        
-        // fazendo a validação dos dados
-        //if ((txtLitro.getText().isEmpty()) || (txtKM.getText().isEmpty() || (txtData.getText().isEmpty()) || txtPosto.getText().isEmpty()))
-        if (txtPosto.getText().trim().equals(""))
-        {   
-            System.out.println("Entrou na condição");
-            JOptionPane.showMessageDialog(null, "Os campos não podem retornar vazios");
-        }
-        else { 
-
-            // instanciando a classe GasDAO do pacote dao e criando seu objeto dao
-            GasDAO dao = new GasDAO();
-            dao.adiciona(gas1);
-            JOptionPane.showMessageDialog(null, "Media "+ txtMedia.getText()+" inserido com sucesso! " +" R$ "+ t +" Custo do Litro !!");
-        }
-        
-       //formWindowActivated(java.awt.event.WindowEvent evt);
-        limparCampos();
-
-    }//GEN-LAST:event_btnInserirActionPerformed
-
-    private void txtKMKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtKMKeyPressed
-        txtKMFinal.setEnabled(false);
-        txtKMInicial.setEnabled(false);
-         //Libera alerta para selecionar posto
-        jAlerta3.setVisible(true);
-        jAlerta2.setVisible(true);
-    }//GEN-LAST:event_txtKMKeyPressed
-
-    private void txtLitroFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtLitroFocusGained
-        //Libera alerta para selecionar posto
-        jAlerta3.setVisible(true);
-        jAlerta2.setVisible(true);
-        //calcular e verificar se temos valor
-       
-//        if((txtKM.getText().trim().equals("")
-        if((txtKM.getText().trim().equals("")) && (!txtKMFinal.getText().trim().equals("")))
-        {
-            float i = Float.parseFloat(txtKMInicial.getText());
-            float f = Float.parseFloat(txtKMFinal.getText());
-            
-            float x = f - i;
-            //System.out.println("Media:  "+ x);
-            
-            txtKM.setText(String.valueOf(x));
-           
-        }
-    }//GEN-LAST:event_txtLitroFocusGained
-
-    private void txtValorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtValorFocusGained
-        System.out.println("Verificar se dados estao completo  ");
-        /// Verifica se dados foi adionadados para calcular media
-        if((!txtKM.getText().trim().equals("")) && (!txtLitro.getText().trim().equals("")))
-        {
-            System.out.println("Entrou no se  ");
-            /// Calcular media
-            float k = Float.parseFloat(txtKM.getText());
-            float l = Float.parseFloat(txtLitro.getText());
-            
-            float r = k  / l;
-            //System.out.println("Media:  "+ r);
-            
-            txtMedia.setText(String.valueOf(r));
-           
-        }
-    }//GEN-LAST:event_txtValorFocusGained
-
-    private void bntCadastroPostoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntCadastroPostoActionPerformed
-        telaCadastroPosto tela1 = new telaCadastroPosto();
-        tela1.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_bntCadastroPostoActionPerformed
-
-    private void jPostoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPostoMouseClicked
-        // passar os valor para os campos tfields
-        int linha = jPosto.getSelectedRow();// selecionar a linha na jPosto
-        txtPosto.setText(jPosto.getValueAt(linha,0).toString());
-        txtPostoNome.setText(jPosto.getValueAt(linha,1).toString());
-        jAlerta3.setVisible(false);
-        jAlerta2.setVisible(false);
-
-
-    }//GEN-LAST:event_jPostoMouseClicked
-
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         //carregar os dados na jPosto quando abrir o formulario
         //criar sql
@@ -1429,51 +1311,6 @@ public class telaPrincipal extends javax.swing.JFrame {
         
        
     }//GEN-LAST:event_formWindowActivated
-
-    private void txtPostoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPostoFocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPostoFocusGained
-
-    private void txtPostoNomeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPostoNomeFocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPostoNomeFocusGained
-
-    private void txtValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtValorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtValorActionPerformed
-
-    private void txtMediaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMediaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtMediaActionPerformed
-
-    private void jGasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jGasMouseClicked
-           // passar os valor para os campos tfields
-        txtCodGas1.setVisible(true);   
-        txtCodGas.setVisible(true);   
-        int linha = jGas.getSelectedRow();// selecionar a linha na jPosto
-        txtCodGas.setText(jGas.getValueAt(linha,0).toString());
-        txtLitro.setText(jGas.getValueAt(linha,1).toString());
-        
-        
-        txtKM.setText(jGas.getValueAt(linha,2).toString());
-        txtValor.setText(jGas.getValueAt(linha,3).toString());
-        txtData.setText(jGas.getValueAt(linha,4).toString());
-        txtMedia.setText(jGas.getValueAt(linha,5).toString());
-        txtPosto.setText(jGas.getValueAt(linha,7).toString());
-        txtPostoNome.setText(jGas.getValueAt(linha,8).toString());//teste para pegar nome do posto
-        int linha2 = (Integer.parseInt(txtPosto.getText()));
-        
-//        int linha2 = jPosto.getSelectedRow();
-//        linha2 = (Integer.parseInt(jGas.getValueAt(linha,7).toString()));
-        System.out.println("Valor da linha 2:"+linha2);
-//        txtPostoNome.setText(jPosto.getValueAt(linha2,1).toString());
-
-       // *** Campos
-       btnInserir.setVisible(false);
-       btnAlterar.setVisible(true);
-       btnDeletar.setVisible(true);
-       
-    }//GEN-LAST:event_jGasMouseClicked
 
     private void jGas1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jGas1MouseClicked
         // TODO add your handling code here:
@@ -1551,72 +1388,6 @@ public class telaPrincipal extends javax.swing.JFrame {
        grafico();
     }//GEN-LAST:event_jPanel2MouseEntered
 
-    private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
-        //alterar dados 
-         //alterando banco tabela gas
-        // instanciando a classe Posto do pacote modelo e criando seu objeto posto
-        Gas gas1 = new Gas();
-        gas1.setIdgas(Integer.parseInt(txtCodGas.getText()));
-       
-        gas1.setLitro(Float.parseFloat(txtLitro.getText()));
-        gas1.setKm(Float.parseFloat(txtKM.getText()));
-        ///tratamento data
-               SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-                try
-                {
-                    java.util.Date date = sdf.parse(txtData.getText());
-                    java.sql.Date dataSql = new java.sql.Date(date.getTime());
-                    //System.out.println("Data:::: " + dataSql );
-                    gas1.setData(dataSql);
-                }
-                catch (ParseException ex)
-                {
-                    Logger.getLogger(gas1.toString()).log(Level.SEVERE, null, ex);
-
-                }
-
-        gas1.setValor(Float.parseFloat(txtValor.getText()));
-        gas1.setMedia(Float.parseFloat(txtMedia.getText()));
-        //Calcular Custo do Litro de Combustivel
-        float t = 0;//adicionado 
-        if ((!txtValor.getText().trim().equals("")) && (!txtLitro.getText().trim().equals("")))
-        {
-            float r= Float.parseFloat(txtValor.getText());
-            float s = Float.parseFloat(txtLitro.getText());
-            
-            t = r / s;
-        
-            gas1.setCusto(t);
-        }
-         else
-        {
-            JOptionPane.showMessageDialog(null, "Verifique os campos!!!");
-        }
-        gas1.setIdposto(Integer.parseInt(txtPosto.getText()));
-        
-            // instanciando a classe GasDAO do pacote dao e criando seu objeto dao
-            GasDAO dao = new GasDAO();
-            dao.alterar(gas1);
-            JOptionPane.showMessageDialog(null, "Dados alterado para cod "+ txtCodGas.getText()+" com sucesso! ");
-            limparCampos();
-        
-        
-        
-    }//GEN-LAST:event_btnAlterarActionPerformed
-
-    private void btnDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarActionPerformed
-        // deletando na tabela GAS
-        Gas gas2 = new Gas();
-        gas2.setIdgas(Integer.parseInt(txtCodGas.getText()));
-        
-        System.out.println("ID posto " + txtCodGas.getText());
-        GasDAO dao = new GasDAO();
-        dao.deletar(gas2);
-        
-         JOptionPane.showMessageDialog(null, "DELETADO!");
-        limparCampos();
-    }//GEN-LAST:event_btnDeletarActionPerformed
-
     private void jPosto2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPosto2MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jPosto2MouseClicked
@@ -1626,6 +1397,258 @@ public class telaPrincipal extends javax.swing.JFrame {
          carregarWeb();
         
     }//GEN-LAST:event_btnCotaActionPerformed
+
+    private void jPanel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel3MouseEntered
+
+    private void btnDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarActionPerformed
+        // deletando na tabela GAS
+        Gas gas2 = new Gas();
+        gas2.setIdgas(Integer.parseInt(txtCodGas.getText()));
+
+        System.out.println("ID posto " + txtCodGas.getText());
+        GasDAO dao = new GasDAO();
+        dao.deletar(gas2);
+
+        JOptionPane.showMessageDialog(null, "DELETADO!");
+        limparCampos();
+    }//GEN-LAST:event_btnDeletarActionPerformed
+
+    private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
+        //alterar dados
+        //alterando banco tabela gas
+        // instanciando a classe Posto do pacote modelo e criando seu objeto posto
+        Gas gas1 = new Gas();
+        gas1.setIdgas(Integer.parseInt(txtCodGas.getText()));
+
+        gas1.setLitro(Float.parseFloat(txtLitro.getText()));
+        gas1.setKm(Float.parseFloat(txtKM.getText()));
+        ///tratamento data
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        try
+        {
+            java.util.Date date = sdf.parse(txtData.getText());
+            java.sql.Date dataSql = new java.sql.Date(date.getTime());
+            //System.out.println("Data:::: " + dataSql );
+            gas1.setData(dataSql);
+        }
+        catch (ParseException ex)
+        {
+            Logger.getLogger(gas1.toString()).log(Level.SEVERE, null, ex);
+
+        }
+
+        gas1.setValor(Float.parseFloat(txtValor.getText()));
+        gas1.setMedia(Float.parseFloat(txtMedia.getText()));
+        //Calcular Custo do Litro de Combustivel
+        float t = 0;//adicionado
+        if ((!txtValor.getText().trim().equals("")) && (!txtLitro.getText().trim().equals("")))
+        {
+            float r= Float.parseFloat(txtValor.getText());
+            float s = Float.parseFloat(txtLitro.getText());
+
+            t = r / s;
+
+            gas1.setCusto(t);
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Verifique os campos!!!");
+        }
+        gas1.setIdposto(Integer.parseInt(txtPosto.getText()));
+
+        // instanciando a classe GasDAO do pacote dao e criando seu objeto dao
+        GasDAO dao = new GasDAO();
+        dao.alterar(gas1);
+        JOptionPane.showMessageDialog(null, "Dados alterado para cod "+ txtCodGas.getText()+" com sucesso! ");
+        limparCampos();
+
+    }//GEN-LAST:event_btnAlterarActionPerformed
+
+    private void jGasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jGasMouseClicked
+        // passar os valor para os campos tfields
+        txtCodGas1.setVisible(true);
+        txtCodGas.setVisible(true);
+        int linha = jGas.getSelectedRow();// selecionar a linha na jPosto
+        txtCodGas.setText(jGas.getValueAt(linha,0).toString());
+        txtLitro.setText(jGas.getValueAt(linha,1).toString());
+
+        txtKM.setText(jGas.getValueAt(linha,2).toString());
+        txtValor.setText(jGas.getValueAt(linha,3).toString());
+        txtData.setText(jGas.getValueAt(linha,4).toString());
+        txtMedia.setText(jGas.getValueAt(linha,5).toString());
+        txtPosto.setText(jGas.getValueAt(linha,7).toString());
+        txtPostoNome.setText(jGas.getValueAt(linha,8).toString());//teste para pegar nome do posto
+        int linha2 = (Integer.parseInt(txtPosto.getText()));
+
+        //        int linha2 = jPosto.getSelectedRow();
+        //        linha2 = (Integer.parseInt(jGas.getValueAt(linha,7).toString()));
+        System.out.println("Valor da linha 2:"+linha2);
+        //        txtPostoNome.setText(jPosto.getValueAt(linha2,1).toString());
+
+        // *** Campos
+        btnInserir.setVisible(false);
+        btnAlterar.setVisible(true);
+        btnDeletar.setVisible(true);
+
+    }//GEN-LAST:event_jGasMouseClicked
+
+    private void txtPostoNomeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPostoNomeFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPostoNomeFocusGained
+
+    private void txtPostoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPostoFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPostoFocusGained
+
+    private void jPostoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPostoMouseClicked
+        // passar os valor para os campos tfields
+        int linha = jPosto.getSelectedRow();// selecionar a linha na jPosto
+        txtPosto.setText(jPosto.getValueAt(linha,0).toString());
+        txtPostoNome.setText(jPosto.getValueAt(linha,1).toString());
+        jAlerta3.setVisible(false);
+        jAlerta2.setVisible(false);
+
+    }//GEN-LAST:event_jPostoMouseClicked
+
+    private void bntCadastroPostoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntCadastroPostoActionPerformed
+        
+        //new telaCadastroPosto().setVisible(true);
+       telaPrincipal tela = new telaPrincipal();
+       telaCadastroPosto tela1 = new telaCadastroPosto();
+       tela.setVisible(false);
+       tela1.setVisible(true);
+       tela1.setFocusable(true);
+//        dispose();
+    }//GEN-LAST:event_bntCadastroPostoActionPerformed
+
+    private void txtMediaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMediaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtMediaActionPerformed
+
+    private void txtKMInicialKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtKMInicialKeyPressed
+        txtKMFinal.setVisible(true);
+        txtKMFinal.setEnabled(true);
+        txtKM.setEnabled(false);
+        txtMedia.setEnabled(false);
+    }//GEN-LAST:event_txtKMInicialKeyPressed
+
+    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
+        limparCampos();
+    }//GEN-LAST:event_btnLimparActionPerformed
+
+    private void btnInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserirActionPerformed
+        // instanciando a classe Gas do pacote modelo e criando seu objeto gas
+        Gas gas1 = new Gas();
+
+        gas1.setLitro(Float.parseFloat(txtLitro.getText()));
+        gas1.setKm(Float.parseFloat(txtKM.getText()));
+        gas1.setValor(Float.parseFloat(txtValor.getText()));
+        gas1.setMedia(Float.parseFloat(txtMedia.getText()));
+
+        //Calcular Custo do Litro de Combustivel
+        float t = 0;//adicionado
+        if ((!txtValor.getText().trim().equals("")) && (!txtLitro.getText().trim().equals("")))
+        {
+            float r= Float.parseFloat(txtValor.getText());
+            float s = Float.parseFloat(txtLitro.getText());
+
+            t = r / s;
+
+            gas1.setCusto(t);
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Verifique os campos!!!");
+        }
+        // retirar se nao der certo
+
+        gas1.setIdposto(Integer.parseInt(txtPosto.getText()));
+        //teste tratamento data
+
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        try
+        {
+            java.util.Date date = sdf.parse(txtData.getText());
+            java.sql.Date dataSql = new java.sql.Date(date.getTime());
+            //System.out.println("Data:::: " + dataSql );
+            gas1.setData(dataSql);
+        }
+        catch (ParseException ex)
+        {
+            Logger.getLogger(gas1.toString()).log(Level.SEVERE, null, ex);
+
+        }
+
+        // fazendo a validação dos dados
+        //if ((txtLitro.getText().isEmpty()) || (txtKM.getText().isEmpty() || (txtData.getText().isEmpty()) || txtPosto.getText().isEmpty()))
+        if (txtPosto.getText().trim().equals(""))
+        {
+            System.out.println("Entrou na condição");
+            JOptionPane.showMessageDialog(null, "Os campos não podem retornar vazios");
+        }
+        else {
+
+            // instanciando a classe GasDAO do pacote dao e criando seu objeto dao
+            GasDAO dao = new GasDAO();
+            dao.adiciona(gas1);
+            JOptionPane.showMessageDialog(null, "Media "+ txtMedia.getText()+" inserido com sucesso! " +" R$ "+ t +" Custo do Litro !!");
+        }
+
+        //formWindowActivated(java.awt.event.WindowEvent evt);
+        limparCampos();
+    }//GEN-LAST:event_btnInserirActionPerformed
+
+    private void txtKMKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtKMKeyPressed
+        txtKMFinal.setEnabled(false);
+        txtKMInicial.setEnabled(false);
+        //Libera alerta para selecionar posto
+        jAlerta3.setVisible(true);
+        jAlerta2.setVisible(true);
+    }//GEN-LAST:event_txtKMKeyPressed
+
+    private void txtValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtValorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtValorActionPerformed
+
+    private void txtValorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtValorFocusGained
+        System.out.println("Verificar se dados estao completo  ");
+        /// Verifica se dados foi adionadados para calcular media
+        if((!txtKM.getText().trim().equals("")) && (!txtLitro.getText().trim().equals("")))
+        {
+            System.out.println("Entrou no se  ");
+            /// Calcular media
+            float k = Float.parseFloat(txtKM.getText());
+            float l = Float.parseFloat(txtLitro.getText());
+
+            float r = k  / l;
+            //System.out.println("Media:  "+ r);
+
+            txtMedia.setText(String.valueOf(r));
+
+        }
+    }//GEN-LAST:event_txtValorFocusGained
+
+    private void txtLitroFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtLitroFocusGained
+        //Libera alerta para selecionar posto
+        jAlerta3.setVisible(true);
+        jAlerta2.setVisible(true);
+        //calcular e verificar se temos valor
+
+        //        if((txtKM.getText().trim().equals("")
+            if((txtKM.getText().trim().equals("")) && (!txtKMFinal.getText().trim().equals("")))
+            {
+                float i = Float.parseFloat(txtKMInicial.getText());
+                float f = Float.parseFloat(txtKMFinal.getText());
+
+                float x = f - i;
+                //System.out.println("Media:  "+ x);
+
+                txtKM.setText(String.valueOf(x));
+
+            }
+    }//GEN-LAST:event_txtLitroFocusGained
  
      
     //Gerando o grafico
@@ -1753,25 +1776,23 @@ public class telaPrincipal extends javax.swing.JFrame {
     {
         System.setProperty("webdriver.gecko.driver", "D:\\CursoJava\\1 Biblioteca\\geckodriver-v0.25.0-win64\\geckodriver.exe");
          WebDriver driver = new FirefoxDriver();
-          System.out.println("2 Site");//retirar
+         
         //WebDriver driver1 = new FirefoxDriver();
         driver.get("https://br.investing.com/commodities/brent-oil");
        // WebDriverWait wait = new WebDriverWait(driver, 30);
        //  System.out.println("30 segundos");
         WebElement valor2 = driver.findElement(By.id("last_last"));
-        System.out.println("Passou do valor2 ");//retirar
+        
         String texto1 = valor2.getText();
-        System.out.println("Site pegar valor do Petróleo:");//retirar
-        System.out.println(texto1); 
+        
+        
         WebElement valor1 = driver.findElement(By.id("TSB__summary_last_2103"));
         String texto = valor1.getText();
-        System.out.println("Site pegar valor do Dolar:");//retirar
-        System.out.println(texto); //retirar
-        //TSB__summary_last_2103
         
         
-         txtBarril.setText(" $ " + texto1);
-         txtDolar.setText(" $  "+ texto);
+        
+         txtBarril.setText("$ " + texto1);
+         txtDolar.setText("$ "+ texto);
          btnCota.setVisible(false);
          driver.close();
          driver.quit();
@@ -1874,6 +1895,7 @@ public class telaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
