@@ -87,7 +87,7 @@ public class telaPrincipal extends javax.swing.JFrame {
                    jCorrer.setLocation(x, y);
                   
                    try {
-                       sleep(20);
+                       sleep(40);
                    }catch (Exception e){
                    
                }
@@ -98,32 +98,6 @@ public class telaPrincipal extends javax.swing.JFrame {
        }.start();
        
        
-       
-        // movimentar label da cotação do Barril
-        new Thread(){
-           public void run()
-           {
-               int x = 400; 
-               int y = txtBarril.getLocation().y;
-              
-               while(true){
-                   x --;
-                   if( x < - 100)
-                   {
-                       x=200;
-                       //x=getWidth();                       
-                   }
-                   txtBarril.setLocation(x, y);
-                   try {
-                       sleep(20);
-                   }catch (Exception e){
-                   
-               }
-               }
-           }
-           
-           
-       }.start();
          // movimentar label da cotação do Barril e Dólar
         new Thread(){
            public void run()
@@ -1377,11 +1351,7 @@ public class telaPrincipal extends javax.swing.JFrame {
             }
          
     }
-            
-            
-            
-            
-            
+          
             
     private void jPanel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseEntered
         // chamar tela de grafico
