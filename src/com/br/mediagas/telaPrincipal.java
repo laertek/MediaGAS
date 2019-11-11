@@ -24,38 +24,16 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 //importação para os graficos
 
-import java.awt.BorderLayout;
-import java.awt.Button;
+
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Label;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import static java.lang.Thread.sleep;
-import java.util.ArrayList;
-import java.util.Collections;
-import javax.swing.BoxLayout;
-import javax.swing.JComponent;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.SwingUtilities;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
-import javax.swing.table.AbstractTableModel;
 import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartFrame;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.PlotOrientation;
-import org.jfree.chart.plot.CombinedDomainXYPlot;
-import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.category.DefaultCategoryDataset;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 
 /**
@@ -133,7 +111,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         // conectar ao banco  
     
             Connection connection = new ConnectionFactory().getConnection();
-            System.out.println("Conexão aberta!");
+            //System.out.println("Conexão aberta!");
             try
             {
                 PreparedStatement stmt = connection.prepareCall(sqlgas);
@@ -156,11 +134,6 @@ public class telaPrincipal extends javax.swing.JFrame {
                         rs.getString("km"),
                         rs.getString("valor"),
                         data_formatada,
-                        //rs.getDate("data"),
-                        
-                        
-                        //rs.getData(new SimpleDateFormat("dd/MM/yyyy").format("data")),
-                        //txtData.setText(new SimpleDateFormat("dd/MM/yyyy").format(new Date(System.currentTimeMillis())));
                         rs.getFloat("media"),
                         rs.getFloat("custo"),
                         rs.getInt("idposto"),
@@ -172,7 +145,7 @@ public class telaPrincipal extends javax.swing.JFrame {
                 
                //fechar banco 
                connection.close(); 
-               System.out.println("Conexão Fechar");
+               //System.out.println("Conexão Fechar");
             }
             catch(SQLException ex)
             {
@@ -190,7 +163,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         // conectar ao banco  
     
             Connection connection = new ConnectionFactory().getConnection();
-            System.out.println("Conexão aberta!");
+            //System.out.println("Conexão aberta!");
             try
             {
                 PreparedStatement stmt = connection.prepareCall(sqlgas);
@@ -213,11 +186,6 @@ public class telaPrincipal extends javax.swing.JFrame {
                         rs.getString("km"), "R$ " +
                         rs.getString("valor"),
                         data_formatada,
-                        //rs.getDate("data"),
-                        
-                        
-                        //rs.getData(new SimpleDateFormat("dd/MM/yyyy").format("data")),
-                        //txtData.setText(new SimpleDateFormat("dd/MM/yyyy").format(new Date(System.currentTimeMillis())));
                         rs.getFloat("media"),
                         rs.getFloat("custo"),
                         rs.getString("tb_posto.nome"),
@@ -228,7 +196,7 @@ public class telaPrincipal extends javax.swing.JFrame {
                 
                //fechar banco 
                connection.close(); 
-               System.out.println("Conexão Fechar");
+              // System.out.println("Conexão Fechar");
             }
             catch(SQLException ex)
             {
@@ -248,7 +216,7 @@ public class telaPrincipal extends javax.swing.JFrame {
           // conectar ao banco  
     
             Connection connection = new ConnectionFactory().getConnection();
-            System.out.println("Conexão aberta!");
+            //System.out.println("Conexão aberta!");
             try
             {
                 PreparedStatement stmt = connection.prepareCall(sql);
@@ -278,7 +246,7 @@ public class telaPrincipal extends javax.swing.JFrame {
                 
                //fechar banco 
                connection.close(); 
-               System.out.println("Conexão Fechar");
+              // System.out.println("Conexão Fechar");
             }
             catch(SQLException ex)
             {
@@ -295,7 +263,7 @@ public class telaPrincipal extends javax.swing.JFrame {
           // conectar ao banco  
     
             Connection connection = new ConnectionFactory().getConnection();
-            System.out.println("Conexão aberta!");
+            //System.out.println("Conexão aberta!");
             try
             {
                 PreparedStatement stmt = connection.prepareCall(sql);
@@ -325,11 +293,8 @@ public class telaPrincipal extends javax.swing.JFrame {
                 
                //fechar banco 
                connection.close(); 
-               System.out.println("Conexão Fechar");
+               //System.out.println("Conexão Fechar");
               
-             
-//               int rowSel = jPosto1.getSelectedRow();
-//               System.out.println("Pego o valor da JPosto 1"+ rowSel);
             }
             catch(SQLException ex)
             {
@@ -340,11 +305,7 @@ public class telaPrincipal extends javax.swing.JFrame {
     
     
     // 
-    /**
-     * This method is called from within the constructor to initialize the form.
-     * WARNING: Do NOT modify this code. The content of this method is always
-     * regenerated by the Form Editor.
-     */
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -597,6 +558,8 @@ public class telaPrincipal extends javax.swing.JFrame {
         jLabel18.setToolTipText("");
         jLabel18.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jLabel18.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+
+        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
 
         jCorrer.setText(" Selecione o Posto para ver sua média:");
 
@@ -1067,6 +1030,7 @@ public class telaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        jPanel9.setBackground(new java.awt.Color(204, 204, 255));
         jPanel9.setBorder(new javax.swing.border.MatteBorder(null));
 
         jLabel10.setFont(new java.awt.Font("Times New Roman", 0, 80)); // NOI18N
@@ -1128,14 +1092,15 @@ public class telaPrincipal extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+            .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jHome)
-                .addGap(96, 96, 96))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(55, Short.MAX_VALUE)
-                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(78, 78, 78))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(jHome)
+                        .addGap(96, 96, 96))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(78, 78, 78))))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1203,6 +1168,8 @@ public class telaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
+
         txtDolar.setBackground(new java.awt.Color(245, 233, 233));
         txtDolar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         txtDolar.setToolTipText("");
@@ -1220,6 +1187,7 @@ public class telaPrincipal extends javax.swing.JFrame {
                 .addGap(0, 11, Short.MAX_VALUE))
         );
 
+        jPanel8.setBackground(new java.awt.Color(255, 255, 255));
         jPanel8.setPreferredSize(new java.awt.Dimension(158, 49));
 
         txtBarril.setBackground(new java.awt.Color(245, 233, 233));
@@ -1333,7 +1301,6 @@ public class telaPrincipal extends javax.swing.JFrame {
     private void jTAbasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTAbasMouseEntered
         txtKMFinal.setEnabled(false);
         txtMedia.setEnabled(false);
-    //limparCampos();
         txtData.setText(new SimpleDateFormat("dd/MM/yyyy").format(new Date(System.currentTimeMillis())));
     }//GEN-LAST:event_jTAbasMouseEntered
 
@@ -1345,8 +1312,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         // chamando o metodo para povoar a jPosto
         povoarJPosto(sql);
         
-        //String sqlgas = "SELECT * FROM tb_gas ORDER BY idgas DESC";
-          String sqlgas = "SELECT tb_gas.idgas, tb_gas.litro, tb_gas.valor, tb_gas.km, tb_gas.data, tb_gas.media, tb_gas.custo, tb_gas.idposto, tb_posto.nome FROM tb_gas, tb_posto WHERE tb_gas.idposto = tb_posto.idposto ORDER BY tb_gas.data DESC";
+        String sqlgas = "SELECT tb_gas.idgas, tb_gas.litro, tb_gas.valor, tb_gas.km, tb_gas.data, tb_gas.media, tb_gas.custo, tb_gas.idposto, tb_posto.nome FROM tb_gas, tb_posto WHERE tb_gas.idposto = tb_posto.idposto ORDER BY tb_gas.data DESC";
         povoarJGas(sqlgas);
         
         //carregar 
@@ -1364,9 +1330,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         
         int linha1 = jPosto1.getSelectedRow(); //selecionar posto
        int codp = Integer.parseInt((String) jPosto1.getValueAt(linha1,0));
-        System.out.println("Codigo do posto "+ codp);
-        //criar sql
-        //String sql = "SELECT idgas, litro, km, data, media, idposto FROM tb_gas WHERE idposto='"+codp+"'";
+       // System.out.println("Codigo do posto "+ codp);
         String sql = "SELECT tb_gas.idgas, tb_gas.litro, tb_gas.km, tb_gas.data, tb_gas.media, tb_gas.idposto, tb_posto.nome FROM tb_gas, tb_posto WHERE tb_gas.idposto = tb_posto.idposto AND tb_gas.idposto='"+codp+"'";
         povoarJPosto2(sql);
         
@@ -1375,7 +1339,7 @@ public class telaPrincipal extends javax.swing.JFrame {
     public void povoarJPosto2(String sql)//preenchedo tabela Jposto2
     {
          Connection connection = new ConnectionFactory().getConnection();
-            System.out.println("Conexão aberta!");
+            //System.out.println("Conexão aberta!");
             try
             {
                 PreparedStatement stmt = connection.prepareCall(sql);
@@ -1395,13 +1359,7 @@ public class telaPrincipal extends javax.swing.JFrame {
                         rs.getInt("idgas"),
                         rs.getString("litro"),
                         rs.getString("km"),
-                       // rs.getString("valor"),
                         data_formatada,
-                        //rs.getDate("data"),
-                        
-                        
-                        //rs.getData(new SimpleDateFormat("dd/MM/yyyy").format("data")),
-                        //txtData.setText(new SimpleDateFormat("dd/MM/yyyy").format(new Date(System.currentTimeMillis())));
                         rs.getFloat("media"),
                         rs.getInt("idposto"),
                         rs.getString("nome"),
@@ -1469,7 +1427,6 @@ public class telaPrincipal extends javax.swing.JFrame {
         {
             java.util.Date date = sdf.parse(txtData.getText());
             java.sql.Date dataSql = new java.sql.Date(date.getTime());
-            //System.out.println("Data:::: " + dataSql );
             gas1.setData(dataSql);
         }
         catch (ParseException ex)
@@ -1521,11 +1478,6 @@ public class telaPrincipal extends javax.swing.JFrame {
         txtPostoNome.setText(jGas.getValueAt(linha,8).toString());//teste para pegar nome do posto
         int linha2 = (Integer.parseInt(txtPosto.getText()));
 
-        //        int linha2 = jPosto.getSelectedRow();
-        //        linha2 = (Integer.parseInt(jGas.getValueAt(linha,7).toString()));
-        System.out.println("Valor da linha 2:"+linha2);
-        //        txtPostoNome.setText(jPosto.getValueAt(linha2,1).toString());
-
         // *** Campos
         btnInserir.setVisible(false);
         btnAlterar.setVisible(true);
@@ -1559,7 +1511,7 @@ public class telaPrincipal extends javax.swing.JFrame {
        tela.setVisible(false);
        tela1.setVisible(true);
        tela1.setFocusable(true);
-//        dispose();
+
     }//GEN-LAST:event_bntCadastroPostoActionPerformed
 
     private void txtMediaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMediaActionPerformed
@@ -1601,7 +1553,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(null, "Verifique os campos!!!");
         }
-        // retirar se nao der certo
+       
 
         gas1.setIdposto(Integer.parseInt(txtPosto.getText()));
         //teste tratamento data
@@ -1611,7 +1563,6 @@ public class telaPrincipal extends javax.swing.JFrame {
         {
             java.util.Date date = sdf.parse(txtData.getText());
             java.sql.Date dataSql = new java.sql.Date(date.getTime());
-            //System.out.println("Data:::: " + dataSql );
             gas1.setData(dataSql);
         }
         catch (ParseException ex)
@@ -1620,8 +1571,6 @@ public class telaPrincipal extends javax.swing.JFrame {
 
         }
 
-        // fazendo a validação dos dados
-        //if ((txtLitro.getText().isEmpty()) || (txtKM.getText().isEmpty() || (txtData.getText().isEmpty()) || txtPosto.getText().isEmpty()))
         if (txtPosto.getText().trim().equals(""))
         {
             System.out.println("Entrou na condição");
@@ -1662,8 +1611,6 @@ public class telaPrincipal extends javax.swing.JFrame {
             float l = Float.parseFloat(txtLitro.getText());
 
             float r = k  / l;
-            //System.out.println("Media:  "+ r);
-
             txtMedia.setText(String.valueOf(r));
 
         }
@@ -1675,15 +1622,13 @@ public class telaPrincipal extends javax.swing.JFrame {
         jAlerta2.setVisible(true);
         //calcular e verificar se temos valor
 
-        //        if((txtKM.getText().trim().equals("")
+        
             if((txtKM.getText().trim().equals("")) && (!txtKMFinal.getText().trim().equals("")))
             {
                 float i = Float.parseFloat(txtKMInicial.getText());
                 float f = Float.parseFloat(txtKMFinal.getText());
 
                 float x = f - i;
-                //System.out.println("Media:  "+ x);
-
                 txtKM.setText(String.valueOf(x));
 
             }
@@ -1698,7 +1643,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         
         //carregar os dados na jPosto1 quando abrir o formulario
         //criar sql
-       // DefaultCategoryDataset posto = new DefaultCategoryDataset();
+       
         String sql = "SELECT * FROM tb_posto ORDER BY idposto DESC";
         
         // chamando o metodo para povoar a jPosto
@@ -1708,23 +1653,22 @@ public class telaPrincipal extends javax.swing.JFrame {
         
         //gas 
         String sqlgas = "SELECT tb_gas.idgas, tb_gas.litro, tb_gas.valor, tb_gas.km, tb_gas.data, tb_gas.media, tb_gas.custo, tb_posto.nome FROM tb_gas, tb_posto WHERE tb_gas.idposto = tb_posto.idposto ORDER BY tb_gas.data DESC";
-        //String sqlgas = "SELECT * FROM tb_gas ORDER BY idgas DESC";
         povoarJGas1(sqlgas);
         
-        // ************cria o gráfico**********
-       // Gerar Grafico 
-         //gerar valor para grafico
+           // ************cria o gráfico**********
+           // Gerar Grafico 
+           //gerar valor para grafico
         int j = jGas1.getRowCount();//retirar
-        System.out.println("Numero de linhas na tabela GAS1 " + j);//retirar
+        //System.out.println("Numero de linhas na tabela GAS1 " + j);//retirar
         
         
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
         for (int linha=0; linha<jGas1.getRowCount(); linha ++)
         {
             Float media =(Float)jGas1.getValueAt(linha, 5);
-            System.out.println("Valor pego para media "+media);
+            //System.out.println("Valor pego para media "+media);
             String data = (String) jGas1.getValueAt(linha, 4);
-            System.out.println("Valor pego para data "+data); 
+           // System.out.println("Valor pego para data "+data); 
             dataset.setValue(media, "Media", data);
        
         }
@@ -1736,10 +1680,7 @@ public class telaPrincipal extends javax.swing.JFrame {
                 for (int linha1=0; linha1<jPosto2.getRowCount(); linha1 ++)
                     {
                         Float media1 =(Float)jPosto2.getValueAt(linha1, 4);
-                        System.out.println("Valor pego para media jposto2 "+media1);
                         String data1 = (String) jPosto2.getValueAt(linha1, 3);
-                        System.out.println("Valor pego para data jposto2 "+data1); 
-
                         dataset.setValue(media1, "Posto Selecionado",data1);
 
                     }
@@ -1759,53 +1700,7 @@ public class telaPrincipal extends javax.swing.JFrame {
             jInternalFrameGrafico.setVisible(true);
             jInternalFrameGrafico.remove(1);
             jInternalFrameGrafico.repaint();
-        /* teste para percorrer com um for
-        Float media = (Float) jGas1.getValueAt(0, 5);
-        Float media2 = (Float) jGas1.getValueAt(1, 5);
-        Float media3 = (Float) jGas1.getValueAt(2, 5);
-        Float media4 = (Float) jGas1.getValueAt(3, 5);
-        Float media5 = (Float) jGas1.getValueAt(4, 5);
-        
-//        System.out.println("Valor pego para media "+media);
-//        System.out.println("Valor pego para media "+media2);
-//        System.out.println("Valor pego para media "+media3);
-//        System.out.println("Valor pego para media "+media4);
-//        System.out.println("Valor pego para media "+media5);
-        
-//        
-//        String data = (String) jGas1.getValueAt(0, 4);
-//        String data2 = (String) jGas1.getValueAt(1, 4);
-//        String data3 = (String) jGas1.getValueAt(2, 4);
-//        String data4 = (String) jGas1.getValueAt(3, 4);
-//        String data5 = (String) jGas1.getValueAt(4, 4);
-//          System.out.println("Valor pego para data "+data);              
-//          System.out.println("Valor pego para data "+data2);     
-//          System.out.println("Valor pego para data "+data3);     
-//          System.out.println("Valor pego para data "+data4);     
-//          System.out.println("Valor pego para data "+data5);    
-          
-          
-        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-        
-        dataset.setValue(media, "Media", data);
-        dataset.setValue(media2, "Media", data2);
-        dataset.setValue(media3, "Media", data3);
-        dataset.setValue(media4, "Media", data4);
-        dataset.setValue(media5, "Media", data5);
-       
-        */
-       // JFreeChart chart = ChartFactory.createLineChart(" Media ", " Data ", "KM / Litro", dataset, PlotOrientation.VERTICAL, true, true, false);
-       // JFreeChart chart = ChartFactory.createBarChart(" Media ", " Data ", "KM / Litro", dataset, PlotOrientation.VERTICAL, true, true, false);
-//        chart.setBackgroundPaint(Color.white);
-//        chart.getTitle().setPaint(Color.black);
-//        CategoryPlot p = chart.getCategoryPlot();
-//        p.setRangeGridlinePaint(Color.BLACK);
-        
-        //ChartFrame frame = new ChartFrame(" *** Teste *** ", chart);//funciona
-       // ChartPanel chartPanel = new ChartPanel(chart);
-        
-      //      jInternalFrameGrafico.setContentPane((new ChartPanel(chart)));
-            
+      
         
         //Fim Grafico 
         
@@ -1814,12 +1709,8 @@ public class telaPrincipal extends javax.swing.JFrame {
     public void carregarWeb()
     {
         System.setProperty("webdriver.gecko.driver", "D:\\CursoJava\\1 Biblioteca\\geckodriver-v0.25.0-win64\\geckodriver.exe");
-         WebDriver driver = new FirefoxDriver();
-         
-        //WebDriver driver1 = new FirefoxDriver();
+        WebDriver driver = new FirefoxDriver();
         driver.get("https://br.investing.com/commodities/brent-oil");
-       // WebDriverWait wait = new WebDriverWait(driver, 30);
-       //  System.out.println("30 segundos");
         WebElement valor2 = driver.findElement(By.id("last_last"));
         
         String texto1 = valor2.getText();
