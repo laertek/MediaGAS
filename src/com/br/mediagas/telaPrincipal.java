@@ -325,8 +325,8 @@ public class telaPrincipal extends javax.swing.JFrame {
         jPanel6 = new javax.swing.JPanel();
         jCorrer = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        btnTodos = new javax.swing.JRadioButton();
         btnDez = new javax.swing.JRadioButton();
+        btnTodos = new javax.swing.JRadioButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -582,16 +582,17 @@ public class telaPrincipal extends javax.swing.JFrame {
         );
 
         jLabel20.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel20.setText("   Posto:");
+        jLabel20.setText(" Itens Gráfico:");
         jLabel20.setToolTipText("");
         jLabel20.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jLabel20.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
 
+        btnG.add(btnDez);
+        btnDez.setSelected(true);
+        btnDez.setText("Mostrar Seis");
+
         btnG.add(btnTodos);
         btnTodos.setText("Mostrar Todos");
-
-        btnG.add(btnDez);
-        btnDez.setText("Mostrar Dez");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -611,8 +612,8 @@ public class telaPrincipal extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnDez)
-                                    .addComponent(btnTodos))
+                                    .addComponent(btnTodos)
+                                    .addComponent(btnDez))
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addComponent(jScrollPane5)
                     .addComponent(jScrollPane7)))
@@ -634,9 +635,9 @@ public class telaPrincipal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnTodos)
+                        .addComponent(btnDez)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnDez)))
+                        .addComponent(btnTodos)))
                 .addGap(9, 9, 9)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1692,15 +1693,31 @@ public class telaPrincipal extends javax.swing.JFrame {
         
         
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-        for (int linha=0; linha<jGas1.getRowCount(); linha ++)
+        //mudado para mostrar somente 10 ou todos no grafico
+        //Alterado para seis ficou melhoro grafico
+        if (btnDez.isSelected())
         {
-            Float media =(Float)jGas1.getValueAt(linha, 5);
-            //System.out.println("Valor pego para media "+media);
-            String data = (String) jGas1.getValueAt(linha, 4);
-           // System.out.println("Valor pego para data "+data); 
-            dataset.setValue(media, "Média", data);
-       
-        }
+        for (int linha=0; linha<6; linha ++)
+            {
+                Float media =(Float)jGas1.getValueAt(linha, 5);
+                //System.out.println("Valor pego para media "+media);
+                String data = (String) jGas1.getValueAt(linha, 4);
+               // System.out.println("Valor pego para data "+data); 
+                dataset.setValue(media, "Média", data);
+
+            }
+        } else
+                {
+                    for (int linha=0; linha<jGas1.getRowCount(); linha ++)
+                    {
+                        Float media =(Float)jGas1.getValueAt(linha, 5);
+                        //System.out.println("Valor pego para media "+media);
+                        String data = (String) jGas1.getValueAt(linha, 4);
+                       // System.out.println("Valor pego para data "+data); 
+                        dataset.setValue(media, "Média", data);
+
+                    }
+                }
            // segundo grafico
           // DefaultCategoryDataset dataset = new DefaultCategoryDataset();
           
