@@ -417,7 +417,7 @@ public class telaPrincipal extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Cod", "Litros", "KMs", "Valor R$", "Data", "Media", "Custo", "Posto"
+                "Cod", "Litros", "KMs", "Valor R$", "Data", "Média", "Custo", "Posto"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -521,7 +521,7 @@ public class telaPrincipal extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Cod", "Litros", "KMs", "Data", "Media", "Cod Posto", "Posto"
+                "Cod", "Litros", "KMs", "Data", "Média", "Cod Posto", "Posto"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -771,8 +771,8 @@ public class telaPrincipal extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(jPosto);
         if (jPosto.getColumnModel().getColumnCount() > 0) {
-            jPosto.getColumnModel().getColumn(0).setMinWidth(30);
-            jPosto.getColumnModel().getColumn(0).setMaxWidth(30);
+            jPosto.getColumnModel().getColumn(0).setMinWidth(35);
+            jPosto.getColumnModel().getColumn(0).setMaxWidth(35);
             jPosto.getColumnModel().getColumn(1).setMinWidth(120);
             jPosto.getColumnModel().getColumn(1).setMaxWidth(120);
             jPosto.getColumnModel().getColumn(2).setMinWidth(100);
@@ -820,7 +820,7 @@ public class telaPrincipal extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Cod", "Litros", "KMs", "Valor R$", "Data", "Media", "Custo", "CodPosto", "Posto"
+                "Cod", "Litros", "KMs", "Valor R$", "Data", "Média", "Custo", "CodPosto", "Posto"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1034,7 +1034,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         jPanel9.setBorder(new javax.swing.border.MatteBorder(null));
 
         jLabel10.setFont(new java.awt.Font("Times New Roman", 0, 80)); // NOI18N
-        jLabel10.setText("MediaGas ");
+        jLabel10.setText("MédiaGas ");
 
         jLabel22.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         jLabel22.setText("Desenvolvido por LFK Soft.");
@@ -1669,7 +1669,7 @@ public class telaPrincipal extends javax.swing.JFrame {
             //System.out.println("Valor pego para media "+media);
             String data = (String) jGas1.getValueAt(linha, 4);
            // System.out.println("Valor pego para data "+data); 
-            dataset.setValue(media, "Media", data);
+            dataset.setValue(media, "Média", data);
        
         }
            // segundo grafico
@@ -1687,7 +1687,7 @@ public class telaPrincipal extends javax.swing.JFrame {
             }
            //JFreeChart chart = ChartFactory.createBarChart(" Media ", " Data ", "KM / Litro", dataset, PlotOrientation.VERTICAL, true, true, false);
           
-           JFreeChart chart = ChartFactory.createBarChart(" Media ", " Data ", "KM / Litro", dataset, PlotOrientation.VERTICAL, true, true, false);
+           JFreeChart chart = ChartFactory.createBarChart(" Média ", " Data ", "KM / Litro", dataset, PlotOrientation.VERTICAL, true, true, false);
            
            chart.setBackgroundPaint(Color.white);
            chart.getTitle().setPaint(Color.black);

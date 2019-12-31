@@ -213,7 +213,7 @@
                             <Column editable="false" title="KMs" type="java.lang.Object"/>
                             <Column editable="false" title="Valor R$" type="java.lang.Object"/>
                             <Column editable="false" title="Data" type="java.lang.Object"/>
-                            <Column editable="false" title="Media" type="java.lang.Object"/>
+                            <Column editable="false" title="M&#xe9;dia" type="java.lang.Object"/>
                             <Column editable="false" title="Custo" type="java.lang.Object"/>
                             <Column editable="false" title="Posto" type="java.lang.Object"/>
                           </Table>
@@ -401,7 +401,7 @@
                             <Column editable="false" title="Litros" type="java.lang.Object"/>
                             <Column editable="false" title="KMs" type="java.lang.Object"/>
                             <Column editable="false" title="Data" type="java.lang.Object"/>
-                            <Column editable="false" title="Media" type="java.lang.Object"/>
+                            <Column editable="false" title="M&#xe9;dia" type="java.lang.Object"/>
                             <Column editable="false" title="Cod Posto" type="java.lang.Object"/>
                             <Column editable="true" title="Posto" type="java.lang.Object"/>
                           </Table>
@@ -967,7 +967,7 @@
                         </Property>
                         <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                           <TableColumnModel selectionModel="0">
-                            <Column maxWidth="30" minWidth="30" prefWidth="-1" resizable="true">
+                            <Column maxWidth="35" minWidth="35" prefWidth="-1" resizable="true">
                               <Title/>
                               <Editor/>
                               <Renderer/>
@@ -1086,7 +1086,7 @@
                             <Column editable="false" title="KMs" type="java.lang.Object"/>
                             <Column editable="false" title="Valor R$" type="java.lang.Object"/>
                             <Column editable="false" title="Data" type="java.lang.Object"/>
-                            <Column editable="false" title="Media" type="java.lang.Object"/>
+                            <Column editable="false" title="M&#xe9;dia" type="java.lang.Object"/>
                             <Column editable="false" title="Custo" type="java.lang.Object"/>
                             <Column editable="false" title="CodPosto" type="java.lang.Object"/>
                             <Column editable="false" title="Posto" type="java.lang.Object"/>
@@ -1305,7 +1305,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Times New Roman" size="80" style="0"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="MediaGas "/>
+                        <Property name="text" type="java.lang.String" value="M&#xe9;diaGas "/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel22">
