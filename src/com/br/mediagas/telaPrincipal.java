@@ -105,6 +105,53 @@ public class telaPrincipal extends javax.swing.JFrame {
     }
    
     
+    ///teste 21/05/2020
+     // Preencher tabela jTableCota
+    public void povoarjTableCota(String sql)
+    {
+          // conectar ao banco  
+    
+            Connection connection = new ConnectionFactory().getConnection();
+            //System.out.println("Conexão aberta!");
+            try
+            {
+                PreparedStatement stmt = connection.prepareCall(sql);
+            
+                ResultSet rs = stmt.executeQuery();
+                DefaultTableModel model = (DefaultTableModel) jTableCota.getModel();
+                model.setNumRows(0); //inicializar do primeiro elemento da tabela
+                
+                while(rs.next())
+                 {
+                     //teste data
+                        Date minhaData = rs.getDate("data");
+                        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+                        String data_formatada = formato.format(minhaData);		
+						
+                      model.addRow(new Object[]
+                    {
+                        rs.getInt("id_cota"),
+                        //rs.getDate("data"),
+                        data_formatada,
+                        rs.getFloat("barril"),
+                        rs.getFloat("dolar"),
+                    });
+                }
+                
+                
+               //fechar banco 
+               connection.close(); 
+               //System.out.println("Conexão Fechar");
+              
+            }
+            catch(SQLException ex)
+            {
+                JOptionPane.showMessageDialog(null, "Não foi possível obter dados do banco. Erro:"+ex); 
+            }
+            
+    }
+    
+    /// fim teste 21/05/2020
     //Preencher tabela JGas
     public void povoarJGas(String sqlgas)
     {
@@ -362,6 +409,12 @@ public class telaPrincipal extends javax.swing.JFrame {
         btnAlterar = new javax.swing.JButton();
         btnDeletar = new javax.swing.JButton();
         jPanelCotar = new javax.swing.JPanel();
+        jLabel21 = new javax.swing.JLabel();
+        txtDataCota = new javax.swing.JFormattedTextField();
+        label1 = new java.awt.Label();
+        label2 = new java.awt.Label();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTableCota = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
         jHome = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
@@ -390,6 +443,9 @@ public class telaPrincipal extends javax.swing.JFrame {
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
+            }
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
             }
         });
 
@@ -978,13 +1034,13 @@ public class telaPrincipal extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(txtPosto, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtPostoNome, javax.swing.GroupLayout.DEFAULT_SIZE, 391, Short.MAX_VALUE)))))
+                                        .addComponent(txtPostoNome, javax.swing.GroupLayout.DEFAULT_SIZE, 413, Short.MAX_VALUE)))))
                         .addGap(4, 4, 4)
                         .addComponent(bntCadastroPosto, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
             .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 952, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 974, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1054,21 +1110,92 @@ public class telaPrincipal extends javax.swing.JFrame {
 
         jPanelCotar.setBackground(new java.awt.Color(204, 204, 204));
         jPanelCotar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelCotarMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jPanelCotarMouseEntered(evt);
             }
         });
 
+        jLabel21.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel21.setText("Cotação - Dólar & Barril.");
+        jLabel21.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        txtDataCota.setBackground(new java.awt.Color(204, 204, 255));
+        txtDataCota.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtDataCota.setToolTipText("Digite Data");
+        txtDataCota.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+
+        label1.setForeground(new java.awt.Color(51, 51, 255));
+        label1.setText("https://br.investing.com/commodities/brent-oil");
+
+        label2.setText("Fonte / Site");
+
+        jTableCota.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Código", "Data", "Barril", "Dólar"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTableCota.getTableHeader().setReorderingAllowed(false);
+        jScrollPane3.setViewportView(jTableCota);
+        if (jTableCota.getColumnModel().getColumnCount() > 0) {
+            jTableCota.getColumnModel().getColumn(0).setMinWidth(80);
+            jTableCota.getColumnModel().getColumn(0).setMaxWidth(80);
+            jTableCota.getColumnModel().getColumn(1).setResizable(false);
+            jTableCota.getColumnModel().getColumn(2).setResizable(false);
+            jTableCota.getColumnModel().getColumn(3).setResizable(false);
+        }
+
         javax.swing.GroupLayout jPanelCotarLayout = new javax.swing.GroupLayout(jPanelCotar);
         jPanelCotar.setLayout(jPanelCotarLayout);
         jPanelCotarLayout.setHorizontalGroup(
             jPanelCotarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 952, Short.MAX_VALUE)
+            .addGroup(jPanelCotarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelCotarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCotarLayout.createSequentialGroup()
+                        .addComponent(label2, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 866, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCotarLayout.createSequentialGroup()
+                        .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtDataCota, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         jPanelCotarLayout.setVerticalGroup(
             jPanelCotarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 647, Short.MAX_VALUE)
+            .addGroup(jPanelCotarLayout.createSequentialGroup()
+                .addGroup(jPanelCotarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtDataCota, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel21))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 483, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+                .addGroup(jPanelCotarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
+
+        jLabel21.getAccessibleContext().setAccessibleName("Cotação - Dolar & Barril.");
 
         jTAbas.addTab("Cotação", jPanelCotar);
 
@@ -1176,7 +1303,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 952, Short.MAX_VALUE)
+            .addGap(0, 974, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1317,7 +1444,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1150, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1172, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1689,6 +1816,24 @@ public class telaPrincipal extends javax.swing.JFrame {
     private void jPanelCotarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelCotarMouseEntered
         // TODO add your handling code here:
     }//GEN-LAST:event_jPanelCotarMouseEntered
+
+    private void jPanelCotarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelCotarMouseClicked
+       
+    }//GEN-LAST:event_jPanelCotarMouseClicked
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+         // NA ABA COTAR - INSERIR DATA ATUAL
+        txtDataCota.setText(new SimpleDateFormat("dd/MM/yyyy").format(new Date(System.currentTimeMillis())));
+        txtDataCota.setEditable(false);
+        
+        //carregar os dados na jTableCota quando abrir o formulario
+        //criar sql
+        String sql = "SELECT * FROM tb_cota";
+        
+        // chamando o metodo para povoar a jPosto
+        povoarjTableCota(sql);
+        
+    }//GEN-LAST:event_formWindowOpened
  
      
     //Gerando o grafico
@@ -1899,6 +2044,7 @@ public class telaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
@@ -1924,14 +2070,19 @@ public class telaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTable jPosto2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTabbedPane jTAbas;
+    private javax.swing.JTable jTableCota;
+    private java.awt.Label label1;
+    private java.awt.Label label2;
     private javax.swing.JLabel txtBarril;
     private javax.swing.JLabel txtCodGas;
     private javax.swing.JLabel txtCodGas1;
     private javax.swing.JFormattedTextField txtData;
+    private javax.swing.JFormattedTextField txtDataCota;
     private javax.swing.JLabel txtDolar;
     private javax.swing.JTextField txtKM;
     private javax.swing.JTextField txtKMFinal;
