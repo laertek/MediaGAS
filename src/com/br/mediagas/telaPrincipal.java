@@ -361,6 +361,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         jAlerta = new javax.swing.JLabel();
         btnAlterar = new javax.swing.JButton();
         btnDeletar = new javax.swing.JButton();
+        jPanelCotar = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jHome = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
@@ -571,7 +572,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jCorrer, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addComponent(jCorrer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -977,13 +978,13 @@ public class telaPrincipal extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(txtPosto, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtPostoNome, javax.swing.GroupLayout.DEFAULT_SIZE, 395, Short.MAX_VALUE)))))
+                                        .addComponent(txtPostoNome, javax.swing.GroupLayout.DEFAULT_SIZE, 391, Short.MAX_VALUE)))))
                         .addGap(4, 4, 4)
                         .addComponent(bntCadastroPosto, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
             .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 956, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 952, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1050,6 +1051,26 @@ public class telaPrincipal extends javax.swing.JFrame {
         );
 
         jTAbas.addTab("Cadastro", jPanel3);
+
+        jPanelCotar.setBackground(new java.awt.Color(204, 204, 204));
+        jPanelCotar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanelCotarMouseEntered(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanelCotarLayout = new javax.swing.GroupLayout(jPanelCotar);
+        jPanelCotar.setLayout(jPanelCotarLayout);
+        jPanelCotarLayout.setHorizontalGroup(
+            jPanelCotarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 952, Short.MAX_VALUE)
+        );
+        jPanelCotarLayout.setVerticalGroup(
+            jPanelCotarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 647, Short.MAX_VALUE)
+        );
+
+        jTAbas.addTab("Cotação", jPanelCotar);
 
         jPanel4.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -1155,7 +1176,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 956, Short.MAX_VALUE)
+            .addGap(0, 952, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1245,8 +1266,9 @@ public class telaPrincipal extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jTAbas)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1295,7 +1317,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1144, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1150, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1663,6 +1685,10 @@ public class telaPrincipal extends javax.swing.JFrame {
 
             }
     }//GEN-LAST:event_txtLitroFocusGained
+
+    private void jPanelCotarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelCotarMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanelCotarMouseEntered
  
      
     //Gerando o grafico
@@ -1766,9 +1792,10 @@ public class telaPrincipal extends javax.swing.JFrame {
         String texto = valor1.getText();
         
         
-        
-         txtBarril.setText("$ " + texto1);
-         txtDolar.setText("$ "+ texto);
+        //replace(",",".") comando migra da virgula para o ponto
+        // para pordemos inserir no banco
+         txtBarril.setText("$ " + texto1.replace(",","."));
+         txtDolar.setText("$ "+ texto.replace(",","."));
          btnCota.setVisible(false);
          driver.close();
          driver.quit();
@@ -1891,6 +1918,7 @@ public class telaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JPanel jPanelCotar;
     private javax.swing.JTable jPosto;
     private javax.swing.JTable jPosto1;
     private javax.swing.JTable jPosto2;
