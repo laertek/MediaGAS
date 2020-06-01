@@ -47,6 +47,10 @@ public class Cota {
     public static void setDolar(float dolar) {
         Cota.dolar = dolar;
     }
+
+    public Date getDate(java.util.Date date) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
    
     
 }

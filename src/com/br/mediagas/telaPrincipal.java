@@ -1,9 +1,11 @@
 
 package com.br.mediagas;
 
+import com.br.mediagas.dao.CotaDAO;
 import com.br.mediagas.dao.GasDAO;
 import com.br.mediagas.dao.PostoDAO;
 import com.br.mediagas.factory.ConnectionFactory;
+import com.br.mediagas.model.Cota;
 import com.br.mediagas.model.Gas;
 import com.br.mediagas.model.Posto;
 import java.sql.Connection;
@@ -135,6 +137,8 @@ public class telaPrincipal extends javax.swing.JFrame {
                         data_formatada,
                         rs.getFloat("barril"),
                         rs.getFloat("dolar"),
+                        rs.getString("custo"),
+                        
                     });
                 }
                 
@@ -1135,17 +1139,17 @@ public class telaPrincipal extends javax.swing.JFrame {
 
         jTableCota.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Código", "Data", "Barril", "Dólar"
+                "Código", "Data", "Barril", "Dólar", "Custo"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -1155,11 +1159,12 @@ public class telaPrincipal extends javax.swing.JFrame {
         jTableCota.getTableHeader().setReorderingAllowed(false);
         jScrollPane3.setViewportView(jTableCota);
         if (jTableCota.getColumnModel().getColumnCount() > 0) {
-            jTableCota.getColumnModel().getColumn(0).setMinWidth(80);
-            jTableCota.getColumnModel().getColumn(0).setMaxWidth(80);
+            jTableCota.getColumnModel().getColumn(0).setMinWidth(60);
+            jTableCota.getColumnModel().getColumn(0).setMaxWidth(60);
             jTableCota.getColumnModel().getColumn(1).setResizable(false);
             jTableCota.getColumnModel().getColumn(2).setResizable(false);
             jTableCota.getColumnModel().getColumn(3).setResizable(false);
+            jTableCota.getColumnModel().getColumn(4).setResizable(false);
         }
 
         javax.swing.GroupLayout jPanelCotarLayout = new javax.swing.GroupLayout(jPanelCotar);
@@ -1815,24 +1820,28 @@ public class telaPrincipal extends javax.swing.JFrame {
 
     private void jPanelCotarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelCotarMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPanelCotarMouseEntered
-
-    private void jPanelCotarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelCotarMouseClicked
-       
-    }//GEN-LAST:event_jPanelCotarMouseClicked
-
-    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-         // NA ABA COTAR - INSERIR DATA ATUAL
         txtDataCota.setText(new SimpleDateFormat("dd/MM/yyyy").format(new Date(System.currentTimeMillis())));
         txtDataCota.setEditable(false);
         
         //carregar os dados na jTableCota quando abrir o formulario
         //criar sql
-        String sql = "SELECT * FROM tb_cota";
+       // String sql = "SELECT * FROM tb_cota";
+        //String sql = "SELECT * FROM tb_cota order by data desc";
+        //adicionando um campo custo abastecido
         
-        // chamando o metodo para povoar a jPosto
-        povoarjTableCota(sql);
-        
+         // teste ok 
+        String sql = "select c.id_cota, c.data, c.barril, c.dolar, g.custo from tb_cota c left join tb_gas g on g.data = c.data order by data desc";
+        // String sql = "select c.id_cota, c.data, c.barril, c.dolar, IFNULL(g.custo,'Não abastecido!') from tb_cota c left join tb_gas g on g.data = c.data order by data desc";
+         // chamando o metodo para 
+        povoarjTableCota(sql); 
+    }//GEN-LAST:event_jPanelCotarMouseEntered
+
+    private void jPanelCotarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelCotarMouseClicked
+      
+    }//GEN-LAST:event_jPanelCotarMouseClicked
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+      
     }//GEN-LAST:event_formWindowOpened
  
      
@@ -1939,11 +1948,31 @@ public class telaPrincipal extends javax.swing.JFrame {
         
         //replace(",",".") comando migra da virgula para o ponto
         // para pordemos inserir no banco
-         txtBarril.setText("$ " + texto1.replace(",","."));
-         txtDolar.setText("$ "+ texto.replace(",","."));
+         //txtBarril.setText("$ " + texto1.replace(",","."));
+         txtBarril.setText(texto1.replace(",","."));
+         //txtDolar.setText("$ "+ texto.replace(",","."));
+        txtDolar.setText(texto.replace(",","."));
          btnCota.setVisible(false);
          driver.close();
-         driver.quit();
+        
+         
+         /* inserindo dados coletados para o banco*/
+         Cota cota1 = new Cota();
+
+        cota1.setDolar(Float.parseFloat(txtDolar.getText()));
+        cota1.setBarril(Float.parseFloat(txtBarril.getText()));
+       
+        System.out.println("dados do Dolar "+ txtDolar.getText());
+        System.out.println("dados do Barril "+ txtBarril.getText());
+         System.out.println("indo para o acesso ao banco");
+        // instanciando a classe CotaDAO do pacote dao e criando seu objeto dao
+        CotaDAO dao = new CotaDAO();
+        dao.adiciona(cota1);
+        JOptionPane.showMessageDialog(null, "Cotação $"+ txtDolar.getText()+" inserido com sucesso! ");
+        
+        /*fim do acesso ao banco*/
+        
+          driver.quit();
     }
     
     

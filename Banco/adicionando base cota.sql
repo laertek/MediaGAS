@@ -1,4 +1,21 @@
+/*  Teste para seelct */
+select data, media from tb_gas;
 
+select data, barril, dolar from tb_cota;
+
+select c.data, IFNULL(g.data,"12"), ifnull(g.custo,"555"), c.barril, c.dolar from tb_gas g inner join tb_cota c on c.data = g.data;
+
+select g.data, g.media from tb_gas g;
+
+select DISTINCT c.data,  c.barril, c.dolar, g.data, g.custo from tb_cota c left join tb_gas g on g.data = c.data;
+
+
+select c.data,  c.barril, c.dolar, g.data, g.custo from tb_cota c left join tb_gas g on g.data = c.data;
+
+select  c.barril, c.dolar, g.data, g.custo from tb_gas g left join tb_cota c on g.data = c.data;
+
+/* resultado esperado*/
+select c.data, c.barril, c.dolar, IFNULL(g.custo,"Não Abastecido") from tb_cota c left join tb_gas g on g.data = c.data;
 
 /* Criado COTA 21/05/2020 */
 create table tb_cota(
@@ -44,3 +61,13 @@ insert into tb_cota Value(null,"2020/05/11",30.15,5.8190);
 insert into tb_cota Value(null,"2020/05/12",29.45,5.8863);
 insert into tb_cota Value(null,"2020/05/13",29.49,5.8870);
 insert into tb_cota Value(null,"2020/05/20",35.81,5.6934);
+
+new
+insert into tb_cota Value(null,CURDATE(),36.22,5.5537);
+25/05
+insert into tb_cota Value(null,CURDATE(),35.58,5.4432);
+35.58 / 5.4432
+26/05 
+insert into tb_cota Value(null,CURDATE(),36.02,5.3460);
+28/05
+insert into tb_cota Value(null,CURDATE(),36.16,5.4049);

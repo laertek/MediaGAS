@@ -15,7 +15,7 @@ import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
 /**
  *
- * @author TSVM
+ * @author Laerte
  */
 public class GasDAO {
     
