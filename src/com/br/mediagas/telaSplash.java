@@ -86,7 +86,7 @@ public class telaSplash extends javax.swing.JFrame {
         jPanel1.setRequestFocusEnabled(false);
 
         jLabel1.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
-        jLabel1.setText("Versão 1.0");
+        jLabel1.setText("Versão 1.2");
 
         jLabel2.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
         jLabel2.setText("LFK");
