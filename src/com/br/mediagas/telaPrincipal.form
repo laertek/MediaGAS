@@ -585,7 +585,6 @@
                                                   <Component id="txtCodGas" min="-2" pref="86" max="-2" attributes="0"/>
                                                   <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
                                               </Group>
-                                              <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Group type="102" alignment="0" attributes="0">
                                                   <EmptySpace min="-2" pref="520" max="-2" attributes="0"/>
                                                   <Component id="jAlerta" min="-2" max="-2" attributes="0"/>
@@ -604,6 +603,7 @@
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="txtValor" min="-2" pref="65" max="-2" attributes="0"/>
                                               </Group>
+                                              <Component id="jLabel2" alignment="0" min="-2" pref="405" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
@@ -768,7 +768,8 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Times New Roman" size="36" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Inserir Dados:"/>
+                    <Property name="text" type="java.lang.String" value="Inserir Dados: Cronos"/>
+                    <Property name="toolTipText" type="java.lang.String" value=""/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel3">

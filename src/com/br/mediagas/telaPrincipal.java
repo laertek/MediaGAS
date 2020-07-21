@@ -717,7 +717,8 @@ public class telaPrincipal extends javax.swing.JFrame {
         });
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
-        jLabel2.setText("Inserir Dados:");
+        jLabel2.setText("Inserir Dados: Cronos");
+        jLabel2.setToolTipText("");
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel3.setText("Data");
@@ -977,7 +978,6 @@ public class telaPrincipal extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(txtCodGas, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(146, 146, 146))
-                                    .addComponent(jLabel2)
                                     .addGroup(jPanel3Layout.createSequentialGroup()
                                         .addGap(520, 520, 520)
                                         .addComponent(jAlerta))
@@ -992,7 +992,8 @@ public class telaPrincipal extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel4)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -1857,7 +1858,9 @@ public class telaPrincipal extends javax.swing.JFrame {
                     txtDolar.setText(jTableCota.getValueAt(0,3).toString());
                     btnCota.setVisible(false);
                 }  
-        else{
+        else{   
+                txtBarril.setText(jTableCota.getValueAt(0,2).toString());
+                txtDolar.setText(jTableCota.getValueAt(0,3).toString());
                 btnCota.setVisible(true);
         }
         //jPosto1.getColumnModel().getColumn(10).setMaxWidth(0);
@@ -1941,7 +1944,7 @@ public class telaPrincipal extends javax.swing.JFrame {
             }
            //JFreeChart chart = ChartFactory.createBarChart(" Media ", " Data ", "KM / Litro", dataset, PlotOrientation.VERTICAL, true, true, false);
           
-           JFreeChart chart = ChartFactory.createBarChart(" Média ", " Data ", "KM / Litro", dataset, PlotOrientation.VERTICAL, true, true, false);
+           JFreeChart chart = ChartFactory.createBarChart(" Média - Fiat Cronos Precision 1.8 ", " Data ", "Km / Litro", dataset, PlotOrientation.VERTICAL, true, true, false);
            
            chart.setBackgroundPaint(Color.white);
            chart.getTitle().setPaint(Color.black);
