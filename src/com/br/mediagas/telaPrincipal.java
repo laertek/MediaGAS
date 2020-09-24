@@ -29,6 +29,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.awt.Color;
 import static java.lang.Thread.sleep;
+import java.util.concurrent.TimeUnit;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -1971,24 +1972,43 @@ public class telaPrincipal extends javax.swing.JFrame {
         WebElement valor2 = driver.findElement(By.id("last_last"));
         
         String texto1 = valor2.getText();
+      
+       //teste para entrar na aba do cabio
+       
+       System.out.println("1");
+       driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+       
+       System.out.println("2");
+      //driver.findElement(By.linkText("Eu aceito")).click();
+      driver.findElement(By.id("onetrust-accept-btn-handler")).click();
+    //btnAceita.click();
+       driver.manage().timeouts().implicitlyWait(600, TimeUnit.SECONDS);
+       System.out.println("3");
+       WebElement btnCambio = driver.findElement(By.id("QBS_1"));
+       btnCambio.click();
+       
+       
+       WebElement valor1 = driver.findElement(By.id("sb_last_2103"));
+       // WebElement valor1 = driver.findElement(By.id("TSB__summary_last_2103"));
+      String texto = valor1.getText();
         
-        
-        WebElement valor1 = driver.findElement(By.id("TSB__summary_last_2103"));
-        String texto = valor1.getText();
-        
+       System.out.println("Aqui");
+        // ver valores 
+        System.out.println("dados do Dolar "+ texto);
+        System.out.println("dados do Barril "+ texto1);
         
         //replace(",",".") comando migra da virgula para o ponto
         // para pordemos inserir no banco
          //txtBarril.setText("$ " + texto1.replace(",","."));
          txtBarril.setText(texto1.replace(",","."));
-         //txtDolar.setText("$ "+ texto.replace(",","."));
+        
         txtDolar.setText(texto.replace(",","."));
          btnCota.setVisible(false);
-         driver.close();
+         driver.close();   
         
          
          /* inserindo dados coletados para o banco*/
-         Cota cota1 = new Cota();
+        Cota cota1 = new Cota();
 
         cota1.setDolar(Float.parseFloat(txtDolar.getText()));
         cota1.setBarril(Float.parseFloat(txtBarril.getText()));
@@ -2002,7 +2022,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Cotação $"+ txtDolar.getText()+" inserido com sucesso! ");
         
         /*fim do acesso ao banco*/
-        
+    
           driver.quit();
     }
     
